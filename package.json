@@ -2,7 +2,10 @@
   "dependencies": {
     "dotenv": "^14.3.2",
     "ejs": "^3.1.6",
-    "express": "^4.17.2"
+    "express": "^4.17.2",
+    "express-session": "^1.17.2",
+    "morgan": "^1.10.0",
+    "passport": "^0.5.2"
   },
   "scripts": {
     "start": "node server.js"
@@ -11,7 +14,6 @@
   "description": "Have you ever wanted to shop for physical versions of NFTs or Cryptos? Look no further, your one-stop metaphysical shop for the ownership of things that don't have value unless you trade them is here! Now selling used paper USD!",
   "version": "1.0.0",
   "main": "server.js",
-  "devDependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sammark1/Shopping-Express-Project.git"

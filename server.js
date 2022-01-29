@@ -1,7 +1,10 @@
 /* ====== External Modules  ====== */
 // Required External Modules
 // all required code that is not our own
+require("dotenv").config();
 const express = require('express');
+const morgan = require("morgan");
+const session = require("express-session");
 
 
 /* ====== Internal Modules  ====== */
@@ -26,6 +29,16 @@ const PORT = 4000; // full caps signify a config variable
 /* ====== App Configuration  ====== */
 // app.set
 app.set('view engine', 'ejs');
+app.use(morgan('dev'));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(
+  session({
+    secret: "kjadsgfjbadfgorrr!",
+    resave: false,
+    saveUninitialized: true,
+  })
+);
 
 /* ====== Routes  ====== */
 app.get('/', function(req, res) {
