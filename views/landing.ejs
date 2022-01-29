@@ -9,6 +9,16 @@
 <body>
     <h1>INTANGICART</h1>
     <P>YOUR ROUTING WORKS</P>
-    <p><%=landingTest[0].test%></p>
+    <li>
+        <li><a href="/shop">See the Shop</a></li>
+        <!-- new html below -->
+        <% if (user) { %>
+            <a href="/logout"><i>trending_flat</i>Log Out</a>
+        <% } else { %>
+            <a href="/auth/google"><i>vpn_key</i>Login with Google</a>
+        <% } %>
+        </li>
+    
+    <!--  <p><%=//landingTest[0].test%></p> -->
 </body>
 </html>
