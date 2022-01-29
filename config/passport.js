@@ -8,6 +8,7 @@ passport.use(
         callbackURL: process.env.GOOGLE_CALLBACK,   
         },
         function (acessToken, refreshToken, profile, cb) {
+            console.log(profile)
             // a user has logged with OAuth 
         }
     )
