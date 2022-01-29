@@ -5,6 +5,8 @@ require("dotenv").config();
 const express = require('express');
 const morgan = require("morgan");
 const session = require("express-session");
+const passport = require("passport");
+
 
 
 /* ====== Internal Modules  ====== */
@@ -15,12 +17,16 @@ const routes = require("./routes");
 /* ====== Instanced Module  ====== */
 // Create the Express app
 const app = express();
+require("./config/database");
+require("./config/passport");
 // returns an object that is our server
 
 	
 /* ====== Middleware  ====== */ 
 //(app.use)
 app.use("/", routes.landingRT);
+app.use(passport.initialize());
+app.use(passport.session());
 
 
 /* ====== System Variables  ====== */
