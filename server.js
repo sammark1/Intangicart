@@ -7,7 +7,7 @@ const express = require('express');
 /* ====== Internal Modules  ====== */
 // Required Internal Modules
 // all code that is our code
-
+const routes = require("./routes");
 
 /* ====== Instanced Module  ====== */
 // Create the Express app
@@ -17,6 +17,7 @@ const app = express();
 	
 /* ====== Middleware  ====== */ 
 //(app.use)
+app.use("/", routes.landingRT);
 
 
 /* ====== System Variables  ====== */
