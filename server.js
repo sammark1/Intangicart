@@ -25,8 +25,7 @@ require("./config/passport");
 /* ====== Middleware  ====== */ 
 //(app.use)
 app.use("/", routes.landingRT);
-app.use(passport.initialize());
-app.use(passport.session());
+
 
 
 /* ====== System Variables  ====== */
@@ -45,6 +44,8 @@ app.use(
     saveUninitialized: true,
   })
 );
+app.use(passport.initialize());
+app.use(passport.session());
 
 /* ====== Routes  ====== */
 app.get('/', function(req, res) {
