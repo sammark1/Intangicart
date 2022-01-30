@@ -30,7 +30,7 @@ app.use(passport.session());
 
 
 /* ====== System Variables  ====== */
-const PORT = 4000; // full caps signify a config variable
+const PORT = process.env.PORT || 4000; // full caps signify a config variable
 
 /* ====== App Configuration  ====== */
 // app.set
@@ -53,6 +53,6 @@ app.get('/', function(req, res) {
 	
 /* ====== Server bind  ====== */
 // bind the application to the port via app.listen(number, optional function to do after bind)
-app.listen(process.env.PORT || 4000, function () {
+app.listen(PORT, function () {
 	console.log(`i'm a little server live on port http://localhost:${PORT}`);
 });
