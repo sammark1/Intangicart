@@ -30,7 +30,7 @@ app.use(passport.session());
 
 
 /* ====== System Variables  ====== */
-const PORT = 4000; // full caps signify a config variable
+const PORT = process.env.PORT || 4000; // full caps signify a config variable
 
 /* ====== App Configuration  ====== */
 // app.set
