@@ -20,7 +20,6 @@ passport.use(
                     });
                     newUser.save(function (err) {
                       if (err) return cb(err);
-                      console.log(newUser.googleId)
                       return cb(null, newUser);
                     });
                   }
@@ -36,7 +35,7 @@ passport.serializeUser(function (user, done) {
 })
 
 passport.deserializeUser(function (id, done) {
-    User.findById(id, function (err,) {
+    User.findById(id, function (err,user) {
         done(err, user);
 });
 });
