@@ -53,6 +53,6 @@ app.get('/', function(req, res) {
 	
 /* ====== Server bind  ====== */
 // bind the application to the port via app.listen(number, optional function to do after bind)
-app.listen(PORT, function () {
+app.listen(process.env.PORT || 4000, function () {
 	console.log(`i'm a little server live on port http://localhost:${PORT}`);
 });
