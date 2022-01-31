@@ -13,7 +13,14 @@ const shop = (req,res) => {
     res.render("shop/shop")
 }
 
+const profile = (req,res) =>{
+    res.render("user/collections", {
+        user: db.landingMD.getAll()
+    })
+}
+
 module.exports = {
     landing,
-    shop
+    shop,
+    profile,
 }
