@@ -1,10 +1,11 @@
 const mongoose = require("mongoose");
 const userSchema = new mongoose.Schema ({
+   _id: mongoose.Schema.Types.ObjectId,
     name: String,
     googleId: String,
     userIcon: String,
     aboutMe: String,
-    collection: [productSchema],
+    collection: [{type: mongoose.Schema.Types.ObjectId, ref:'Product'}],
 }, {
     timestamps: true,
 })

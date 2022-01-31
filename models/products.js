@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const productSchema = new mongoose.Schema ({
-    owner: [userSchema],
+    owner: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User'}],
     listed: Boolean,
     name: String,
     price: Number,
