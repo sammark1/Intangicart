@@ -13,8 +13,8 @@ const shop = (req,res) => {
     res.render("shop/shop")
 }
 
-const profile = (req,res) =>{
-    res.render("user/collections", {
+const user = (req,res) =>{
+    res.render("user/collection", {
         user: db.landingMD.getAll()
     })
 }
@@ -22,5 +22,5 @@ const profile = (req,res) =>{
 module.exports = {
     landing,
     shop,
-    profile,
+    user,
 }
