@@ -9,7 +9,11 @@ const landing = (req, res) => {
         landingTest: db.landingMD.getAll()
     })
 }
+const shop = (req,res) => {
+    res.render("shop/shop")
+}
 
 module.exports = {
-    landing
+    landing,
+    shop
 }

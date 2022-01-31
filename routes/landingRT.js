@@ -12,6 +12,7 @@ router.get("/", function(req,res){
 });
 
  router.get("/landing", ctrl.landingCT.landing)
+ router.get("/shop", ctrl.landingCT.shop);
 
 // Google OAuth login route
 router.get(
