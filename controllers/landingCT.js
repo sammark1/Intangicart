@@ -15,7 +15,7 @@ const shop = (req,res) => {
 
 const user = (req,res) =>{
     res.render("user/collection", {
-        user: db.landingMD.getAll()
+        user: db.landingMD.testDBLink(),
     })
 }
 
