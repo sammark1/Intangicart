@@ -7,11 +7,21 @@ const passport = require("passport");
 // });
 router.get("/", function(req,res){
     res.render("landing", {
-        user: req.user,
+        user2: req.user,
+        
+    });
+});
+
+router.get("/shop", function(req,res){
+    console.log(req.user)
+    res.render("shop", {
+        user2: req.user,
     });
 });
 
  router.get("/landing", ctrl.landingCT.landing)
+ //router.get("/shop", ctrl.landingCT.landing)
+ 
 
 // Google OAuth login route
 router.get(
