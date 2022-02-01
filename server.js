@@ -49,6 +49,7 @@ app.use(passport.session());
 
 app.use("/", routes.landingRT);
 app.use("/", routes.shopRT);
+app.use("/", routes.userRT);
 
 /* ====== Routes  ====== */
 app.get('/', function(req, res) {

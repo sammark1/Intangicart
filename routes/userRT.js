@@ -1,4 +1,6 @@
 const router = require('express').Router();
 const ctrl = require('../controllers');
-//CRUD HERE
+
+router.get("/user",ctrl.userCT.user);
+
 module.exports = router;

@@ -14,7 +14,6 @@ router.get("/", function(req,res){
  router.get("/landing", ctrl.landingCT.landing)
  //router.get("/shop", ctrl.landingCT.shop);
  //temporary route while all routes go through landingRT
- router.get("/user",ctrl.landingCT.user);
 
 // Google OAuth login route
 router.get(

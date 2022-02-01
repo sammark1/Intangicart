@@ -9,18 +9,9 @@ const landing = (req, res) => {
         landingTest: db.landingMD.getAll()
     })
 }
-// const shop = (req,res) => {
-//     res.render("shop/shop")
-// }
 
-const user = (req,res) =>{
-    res.render("user/collection", {
-        user: db.landingMD.testDBLink(),
-    })
-}
+
 
 module.exports = {
     landing,
-    //shop,
-    user,
 }
