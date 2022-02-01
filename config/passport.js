@@ -12,6 +12,7 @@ passport.use(
                 User.findOne({ googleId: profile.id }, function (err, user) {
                   if (err) return cb(err);
                   if (user) {
+                      console.log(user)
                     return cb(null, user);
                   } else {
                     // we have a new user via OAuth!
@@ -36,6 +37,7 @@ passport.serializeUser(function (user, done) {
 
 passport.deserializeUser(function (id, done) {
     User.findById(id, function (err,user) {
+        console.log(user)
         done(err, user);
 });
 });
