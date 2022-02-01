@@ -10,8 +10,6 @@ const landing = (req, res) => {
     })
 }
 
-
-
 module.exports = {
     landing,
 }
