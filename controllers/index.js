@@ -1,5 +1,5 @@
 module.exports = {
     landingCT: require("./landingCT"),
-    storeCT: require("./storeCT"),
+    shopCT: require("./shopCT"),
     usersCT: require("./usersCT"),
 }

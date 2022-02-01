@@ -9,9 +9,9 @@ const landing = (req, res) => {
         landingTest: db.landingMD.getAll()
     })
 }
-const shop = (req,res) => {
-    res.render("shop/shop")
-}
+// const shop = (req,res) => {
+//     res.render("shop/shop")
+// }
 
 const user = (req,res) =>{
     res.render("user/collection", {
@@ -21,6 +21,6 @@ const user = (req,res) =>{
 
 module.exports = {
     landing,
-    shop,
+    //shop,
     user,
 }
