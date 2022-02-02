@@ -8,6 +8,7 @@ function testDBLink(){
         {
             name: "Sam",
             height:`6'3"`,
+            email:"thematrix15@hotmail.com"
         }]
 }
 module.exports = {

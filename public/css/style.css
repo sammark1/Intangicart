@@ -1,17 +1,32 @@
+/* root: define all colors here*/
 :root{
     --primary-color :           #51238b;
+    --secondary-color:          #fbfbf7;
+    --white:                    #ffffff;
 }
+
+/*
+//////////////////////////////////////////////////////
+SECTION HEADER/FOOTER SELECTORS
+//////////////////////////////////////////////////////
+*/
 #headerBar{
     display:flex;
     flex-direction: row;
     justify-content: space-between;
     background-color: var(--primary-color);
-    color:white;
+    color:var(--white);
 }
 #headerBar > a{
     color:white;
 }
+/*!SECTION
+//////////////////////////////////////////////////////
+SECTION SHOP SELECTORS
+//////////////////////////////////////////////////////
+*/
 
+/*ANCHOR PURCHASE OVERLAY SELECTORS*/
 .popover{
     position:absolute;
     top:0;
@@ -30,4 +45,10 @@
     border-radius: 1rem;
     max-width: 60%;
 }
+/*!SECTION
+//////////////////////////////////////////////////////
+SECTION USER/COLLECTION SELECTORS
+//////////////////////////////////////////////////////
+*/
 
+/*ANCHOR EDIT COLLECTION OVERLAY SELECTORS*/
