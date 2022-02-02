@@ -1,5 +1,14 @@
+:root{
+    --primary-color :           #51238b;
+}
 #headerBar{
     display:flex;
     flex-direction: row;
-    background-color: mediumaquamarine;
+    justify-content: space-between;
+    background-color: var(--primary-color);
+    color:white;
 }
+#headerBar > a{
+    color:white;
+}
+
