@@ -12,12 +12,12 @@ router.get("/", function(req,res){
     });
 });
 
-router.get("/shop", function(req,res){
-    console.log(req.user)
-    res.render("shop", {
-        user2: req.user,
-    });
-});
+// router.get("/shop", function(req,res){
+//     console.log(req.user)
+//     res.render("shop", {
+//         user2: req.user,
+//     });
+// });
 
  router.get("/landing", ctrl.landingCT.landing)
  //router.get("/shop", ctrl.landingCT.shop);
