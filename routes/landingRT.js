@@ -20,8 +20,8 @@ router.get("/shop", function(req,res){
 });
 
  router.get("/landing", ctrl.landingCT.landing)
- //router.get("/shop", ctrl.landingCT.landing)
- 
+ //router.get("/shop", ctrl.landingCT.shop);
+ //temporary route while all routes go through landingRT
 
 // Google OAuth login route
 router.get(

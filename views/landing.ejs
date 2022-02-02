@@ -1,16 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Intangicart! Shop for Nothing!</title>
-</head>
-<body>
+<%- include('./partials/header') %>
     <h1>INTANGICART</h1>
     <P>YOUR ROUTING WORKS</P>
     <li>
-        <li><a href="/shop">See the Shop</a></li>
+        <li><a href="/shop">shop shortcut (bypss oauth)</a></li>
         <!-- new html below -->
         <% if (user2) { %>
             <a href="/logout"> <i>test</i> Log Out</a>
@@ -19,6 +11,4 @@
         <% } %>
         </li>
     
-    <!--  <p><%=//landingTest[0].test%></p> -->
-</body>
-</html>
+<%- include('./partials/footer') %>
