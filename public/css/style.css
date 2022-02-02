@@ -12,3 +12,22 @@
     color:white;
 }
 
+.popover{
+    position:absolute;
+    top:0;
+    left:0;
+    width: 100vw;
+    height:100vw;
+    background-color: rgba(0, 0, 0, 20%);
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.popover > div{
+    background-color: white;
+    padding: 1rem;
+    border-radius: 1rem;
+    max-width: 60%;
+}
+
