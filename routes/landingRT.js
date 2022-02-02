@@ -7,7 +7,15 @@ const passport = require("passport");
 // });
 router.get("/", function(req,res){
     res.render("landing", {
-        user: req.user,
+        user2: req.user,
+        
+    });
+});
+
+router.get("/shop", function(req,res){
+    console.log(req.user)
+    res.render("shop", {
+        user2: req.user,
     });
 });
 
