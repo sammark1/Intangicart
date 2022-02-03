@@ -28,8 +28,15 @@
             <input type="text">
           </form>
         </div>
-        <p>Log in button</p>
-        <p>Log out button</p>
+        <% if (user2) { %>
+          <form action="/">
+            <button type="submit">Log out</button>
+          </form>
+        <% } else { %>
+          <form action="/auth/google">
+            <button type="submit">Log in</button>
+          </form>
+        <% } %>
         <p>sign up button</p>
 
     </div>  
