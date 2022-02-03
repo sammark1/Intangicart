@@ -4,7 +4,7 @@ RELATED TO THE STORE AND COLLECTIONS*/
 const db = require("../models");
 //
 const shop = (req,res) => {
-    res.render("shop/shop")
+    res.render("shop/shop",{user2: req.user})
 }
 //
 module.exports = {
