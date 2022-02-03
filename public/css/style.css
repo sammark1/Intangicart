@@ -15,11 +15,13 @@ body{
     max-width: 1440px;
     margin:auto;
 }
+
 #intangicart{
     font-family: 'Zen Dots', cursive;
     font-size: 24pt;
     margin: 0rem 0rem 0rem 1rem
 }
+
 #headerBar{
     display:flex;
     flex-direction: row;
@@ -28,10 +30,12 @@ body{
     background-color: var(--primary-color);
     color:var(--white);
 }
+
 #headerIcon{
     font-size: 36pt;
     margin: 0rem 0rem 0rem 1rem;
 }
+
 #searchbar{
     align-self: center;
     margin: 0rem 0rem 0rem 1rem;
@@ -44,6 +48,11 @@ body{
     display:flex;
     flex-direction: row;
     align-items: center;
+}
+
+#footer{
+    display:flex;
+    flex-direction:row;
 }
 
 /*!SECTION
