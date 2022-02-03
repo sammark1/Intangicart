@@ -24,7 +24,6 @@ passport.use(
                     // we have a new user via OAuth!
                     const newUser = new User({ 
                       googleId: profile.id,
-
                       name: profile.displayName,
                       userIcon: profile.photos[0].value,
                       userEmail: profile.emails[0].value,

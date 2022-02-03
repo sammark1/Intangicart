@@ -8,7 +8,17 @@ const user = (req,res) =>{
         user: db.landingMD.testDBLink(),
     })
 }
+const newProduct = (req, res) => {
+    // giving the new ejs template access to all authors for article reference
+    db.Product.find({}, (err, foundProducts) => {
+        if (err) res.send(err);
+
+        const context = { Product: foundProducts };
+        res.render("user/new", context)
+    });
+};
 
 module.exports = {
-    user
+    user,
+    newProduct
 }
