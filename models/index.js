@@ -1,3 +1,5 @@
 module.exports = {
-    landingMD: require("./landingMD")
+    landingMD: require("./landingMD"),
+    products: require("./products"),
+    user: require("./user")
 }

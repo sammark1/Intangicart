@@ -47,6 +47,7 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
+
 /* ====== Routes  ====== */
 app.get('/', function(req, res) {
     res.send('<h1>Hello World</h1>');

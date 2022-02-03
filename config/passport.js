@@ -16,7 +16,7 @@ passport.use(
                    
                     return cb(null, user);
                   } else {
-                    console.log(profile)
+                    //console.log(profile)
                     // we have a new user via OAuth!
                     const newUser = new User({ 
                       googleId: profile.id,

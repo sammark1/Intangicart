@@ -7,7 +7,7 @@ const userSchema = new mongoose.Schema ({
     aboutMe: String,
     userEmail: String,
     tag: {type:String , default: "banana"},
-    //collection: [{type: mongoose.Schema.Types.ObjectId, ref:'Product'}],
+    userCollection: [{type: mongoose.Schema.Types.ObjectId, ref:'Product'}],
 }, {
     timestamps: true,
 })

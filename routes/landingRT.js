@@ -11,6 +11,7 @@ router.get("/", function(req,res){
     });
 });
 
+
 router.get("/shop", function(req,res){
   res.render("shop", {
       user: req.user,
