@@ -1,5 +1,54 @@
+/* root: define all colors here*/
+:root{
+    --primary-color :           #51238b;
+    --secondary-color:          #fbfbf7;
+    --white:                    #ffffff;
+}
+
+/*
+//////////////////////////////////////////////////////
+SECTION HEADER/FOOTER SELECTORS
+//////////////////////////////////////////////////////
+*/
 #headerBar{
     display:flex;
     flex-direction: row;
-    background-color: mediumaquamarine;
+    justify-content: space-between;
+    background-color: var(--primary-color);
+    color:var(--white);
 }
+#headerBar > a{
+    color:white;
+}
+/*!SECTION
+//////////////////////////////////////////////////////
+SECTION SHOP SELECTORS
+//////////////////////////////////////////////////////
+*/
+
+/*ANCHOR PURCHASE OVERLAY SELECTORS*/
+.popover{
+    position:absolute;
+    top:0;
+    left:0;
+    width: 100vw;
+    height:100vw;
+    background-color: rgba(0, 0, 0, 20%);
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.popover > div{
+    background-color: white;
+    padding: 1rem;
+    border-radius: 1rem;
+    max-width: 60%;
+}
+/*!SECTION
+//////////////////////////////////////////////////////
+SECTION USER/COLLECTION SELECTORS
+//////////////////////////////////////////////////////
+*/
+
+/*ANCHOR EDIT COLLECTION OVERLAY SELECTORS*/
