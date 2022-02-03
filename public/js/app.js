@@ -5,6 +5,7 @@ const $testbutton =$('#TestButton');
 const $popoverCancel =$('#popoverCancel')
 const $storecard =$('#purchaseCard');
 
+//click toggles
 $testbutton.on("click",function(){
     $storecard.show();
 })

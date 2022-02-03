@@ -1,4 +1,5 @@
-/* root: define all colors here*/
+/* root: define all fonts and colors here*/
+@import url('https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap');
 :root{
     --primary-color :           #51238b;
     --secondary-color:          #fbfbf7;
@@ -10,16 +11,41 @@
 SECTION HEADER/FOOTER SELECTORS
 //////////////////////////////////////////////////////
 */
+body{
+    max-width: 1440px;
+    margin:auto;
+}
+#intangicart{
+    font-family: 'Zen Dots', cursive;
+    font-size: 24pt;
+    margin: 0rem 0rem 0rem 1rem
+}
 #headerBar{
     display:flex;
     flex-direction: row;
-    justify-content: space-between;
+    /*justify-content: space-between;*/
+    align-items: center;
     background-color: var(--primary-color);
     color:var(--white);
 }
-#headerBar > a{
-    color:white;
+#headerIcon{
+    font-size: 36pt;
+    margin: 0rem 0rem 0rem 1rem;
 }
+#searchbar{
+    align-self: center;
+    margin: 0rem 0rem 0rem 1rem;
+    padding: 5px;
+    border-radius: 20px;
+    width:200px;
+    height:1.5em;
+    background-color: var(--white);
+    color: black;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+}
+
 /*!SECTION
 //////////////////////////////////////////////////////
 SECTION SHOP SELECTORS
@@ -52,3 +78,9 @@ SECTION USER/COLLECTION SELECTORS
 */
 
 /*ANCHOR EDIT COLLECTION OVERLAY SELECTORS*/
+
+/*!SECTION
+//////////////////////////////////////////////////////
+SECTION GENERAL SELECTORS
+//////////////////////////////////////////////////////
+*/
