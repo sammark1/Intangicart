@@ -24,7 +24,7 @@ require("./config/passport");
 	
 /* ====== Middleware  ====== */ 
 //(app.use)
-app.use("/", routes.landingRT);
+
 
 
 
@@ -34,6 +34,7 @@ const PORT = process.env.PORT || 4000; // full caps signify a config variable
 /* ====== App Configuration  ====== */
 // app.set
 app.set('view engine', 'ejs');
+app.use(express.static('public'))
 app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -48,6 +49,11 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 
+app.use("/", routes.landingRT);
+app.use("/", routes.shopRT);
+app.use("/", routes.userRT);
+
+
 /* ====== Routes  ====== */
 app.get('/', function(req, res) {
     res.send('<h1>Hello World</h1>');
@@ -56,5 +62,6 @@ app.get('/', function(req, res) {
 /* ====== Server bind  ====== */
 // bind the application to the port via app.listen(number, optional function to do after bind)
 app.listen(PORT, function () {
+  //FIXME CHANGE THE CONSOLE LOG!
 	console.log(`i'm a little server live on port http://localhost:${PORT}`);
 });

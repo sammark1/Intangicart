@@ -1,3 +1,6 @@
+/*NOTE THIS CONTROLLER IS USED FOR ROUTES, MODELS, AND VIEWS
+RELATED TO THE LANDING PAGE AND OAUTH*/
+
 const db = require("../models");
 
 const landing = (req, res) => {

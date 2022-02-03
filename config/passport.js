@@ -9,20 +9,26 @@ passport.use(
         callbackURL: process.env.GOOGLE_CALLBACK,   
         },
         function (acessToken, refreshToken, profile, cb) {
+            //console.log(profile)
                 User.findOne({ googleId: profile.id }, function (err, user) {
             
                   if (err) return cb(err);
                   if (user) {
-                   
+                
+
+                      //console.log(user)
+
                     return cb(null, user);
                   } else {
                     //console.log(profile)
                     // we have a new user via OAuth!
                     const newUser = new User({ 
                       googleId: profile.id,
+
                       name: profile.displayName,
                       userIcon: profile.photos[0].value,
                       userEmail: profile.emails[0].value,
+
 
 
 
@@ -30,7 +36,8 @@ passport.use(
                     //console.log(newUser)
                     newUser.save(function (err) {
                       if (err) return cb(err);
-                      //console.log(newUser)
+
+
                       return cb(null, newUser);
                     });
                   }
@@ -46,7 +53,8 @@ passport.serializeUser(function (user, done) {
 })
 
 passport.deserializeUser(function (id, done) {
-    User.findById(id, function (err,) {
+    User.findById(id, function (err,user) {
+        console.log(user)
         done(err, user);
 });
 });

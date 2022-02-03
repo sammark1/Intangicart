@@ -1,24 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Intangicart! Shop for Nothing!</title>
-</head>
-<body>
+<%- include('./partials/header') %>
     <h1>INTANGICART</h1>
     <P>YOUR ROUTING WORKS</P>
     <li>
-        <li><a href="/shop">See the Shop</a></li>
+        <li><a href="/shop">shop shortcut (bypss oauth)</a></li>
         <!-- new html below -->
-        <% if (user) { %>
-            <a href="/logout"><i>trending_flat</i>Log Out</a>
+        <% if (user2) { %>
+            <a href="/logout"> <i>test</i> Log Out</a>
         <% } else { %>
-            <a href="/auth/google"><i>vpn_key</i>Login with Google</a>
+            <a href="/auth/google"> <i>test</i> Login with Google</a>
         <% } %>
-        </li>
+    </li>
+    <div class ="topSectionLND">
+        <h1>Your one stop shop for all things with no value unless you trade them</h1>
+        <img src="/imgs/sitemedia/chup.png" alt="chup">
+    </div>
+    <div class ="shopLND">
+        <h3>Start Shopping</h3>
+        <div class="shopGridLND">
+            
+        </div>
+    </div>
     
-    <!--  <p><%=//landingTest[0].test%></p> -->
-</body>
-</html>
+<%- include('./partials/footer') %>
