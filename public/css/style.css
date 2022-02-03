@@ -4,6 +4,7 @@
     --primary-color :           #51238b;
     --secondary-color:          #fbfbf7;
     --white:                    #ffffff;
+    --gray:                     #cbcbcb;
 }
 
 /*
@@ -38,10 +39,10 @@ body{
 
 #searchbar{
     align-self: center;
-    margin: 0rem 0rem 0rem 1rem;
+    margin: 0rem 1rem 0rem 1rem;
     padding: 5px;
     border-radius: 20px;
-    width:200px;
+    width:fit-content;
     height:1.5em;
     background-color: var(--white);
     color: black;
@@ -49,10 +50,15 @@ body{
     flex-direction: row;
     align-items: center;
 }
+#searchbar > form{
+    
+}
 
 #footer{
+    background-color: var(--gray);
     display:flex;
     flex-direction:row;
+    justify-content: space-around;
 }
 
 /*!SECTION
