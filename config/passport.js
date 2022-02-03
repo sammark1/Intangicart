@@ -11,19 +11,33 @@ passport.use(
         function (acessToken, refreshToken, profile, cb) {
             //console.log(profile)
                 User.findOne({ googleId: profile.id }, function (err, user) {
+            
                   if (err) return cb(err);
                   if (user) {
+                
+
                       //console.log(user)
+
                     return cb(null, user);
                   } else {
+                    //console.log(profile)
                     // we have a new user via OAuth!
                     const newUser = new User({ 
                       googleId: profile.id,
-                      //name: profile.name,
-                
+
+                      name: profile.displayName,
+                      userIcon: profile.photos[0].value,
+                      userEmail: profile.emails[0].value,
+
+
+
+
                     });
+                    //console.log(newUser)
                     newUser.save(function (err) {
                       if (err) return cb(err);
+
+
                       return cb(null, newUser);
                     });
                   }
