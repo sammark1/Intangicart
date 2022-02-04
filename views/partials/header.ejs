@@ -28,19 +28,20 @@
             <input type="text">
           </form>
         </div>
-        <% if (user2) { %>
-          <form action="/logout">
-            <button type="submit">Log out</button>
-          </form>
-        <% } else { %>
-          <form action="/auth/google">
-            <button type="submit">Log in</button>
-          </form>
-          <form action="/auth/google">
-            <button type="submit">Sign up</button>
-          </form>
-        <% } %>
-
+        <div id =headerButtons>
+          <% if (user2) { %>
+            <form action="/logout">
+              <button class="authButton" type="submit">Log out</button>
+            </form>
+          <% } else { %>
+            <form class="authButton" action="/auth/google">
+              <button class="authButton" type="submit">Log in</button>
+            </form>
+            <form action="/auth/google">
+              <button class="signupButton" type="submit">Sign up</button>
+            </form>
+          <% } %>
+        </div>
     </div>  
   </nav>
   <main>
