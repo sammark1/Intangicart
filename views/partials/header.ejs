@@ -22,14 +22,14 @@
       <div id="headerBar">
         <p class="material-icons" id="headerIcon">menu</p>
         <h1 id="intangicart">Intangicart</h1>
-        <div id="searchbar">
-          <p class="material-icons">search</p>
-          <form>
-            <input type="text">
-          </form>
-        </div>
-        <div id =headerButtons>
           <% if (user2) { %>
+            <div id="searchbar">
+              <p class="material-icons">search</p>
+              <form>
+                <input type="text">
+              </form>
+            </div>
+            <div id =headerButtons>
             <p id="userCurrency">$1000</p>
             <form action="/logout">
               <button class="authButton" type="submit">Log out</button>

@@ -37,7 +37,7 @@ body{
 }
 
 #headerIcon{
-    font-size: 36pt;
+    font-size: 32pt;
     margin: 0rem 0rem 0rem 1rem;
     
 }
@@ -51,6 +51,7 @@ body{
     background-color: var(--white);
     color: black;
     flex-grow: 1;
+    max-width: 20rem;
     display:flex;
     flex-direction: row;
     align-items: center;
@@ -59,7 +60,9 @@ body{
     flex-grow: 1;
 }
 #searchbar > form > input{
-    background-color: violet;
+    width: 95%;
+    border: 0px;
+    font-size: 14pt;
 }
 
 #userCurrency{
