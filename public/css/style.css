@@ -1,5 +1,5 @@
 /* root: define all fonts and colors here*/
-@import url('https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600&family=Zen+Dots&display=swap');
 :root{
     --primary-color :           #51238b;
     --secondary-color:          #fbfbf7;
@@ -16,6 +16,7 @@ SECTION HEADER/FOOTER SELECTORS
 body{
     max-width: 1440px;
     margin:auto;
+    font-family: 'Josefin Sans', sans-serif;
 }
 
 #headerBar{
@@ -61,6 +62,10 @@ body{
     background-color: violet;
 }
 
+#userCurrency{
+    margin-right: 1rem;
+}
+
 #headerButtons{
     margin-left: auto;
     display: flex;
@@ -75,6 +80,7 @@ body{
     border-radius: 0px;
     font-size: 14pt;
     margin-right: 1rem;
+    font-family: 'Josefin Sans', sans-serif;
 }
 
 .signupButton{
@@ -83,8 +89,9 @@ body{
     font-size:14pt;
     border:0px;
     border-radius: 20px;
-    padding: 5px 10px 5px 10px;
-    margin-right: 1rem; 
+    padding: 10px 10px 10px 10px;
+    margin-right: 1rem;
+    font-family: 'Josefin Sans', sans-serif; 
 }
 
 #footer{
