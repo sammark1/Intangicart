@@ -5,7 +5,7 @@
     --secondary-color:          #fbfbf7;
     --white:                    #ffffff;
     --gray:                     #cbcbcb;
-    --button-color:             #50D76D;
+    --login-color:             #50D76D;
 }
 
 /*
@@ -88,7 +88,7 @@ body{
 
 .signupButton{
     color: var(--white);
-    background-color: var(--button-color);
+    background-color: var(--login-color);
     font-size:14pt;
     border:0px;
     border-radius: 20px;
@@ -104,7 +104,31 @@ body{
     justify-content: space-around;
 }
 
+/*!SECTION
+//////////////////////////////////////////////////////
+SECTION LANDING SELECTORS
+//////////////////////////////////////////////////////
+*/
+#topSectionLND{
+    background-color: var(--secondary-color);
+    height: 475px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
 
+#topSectionLND > img{
+    max-width: 360px;
+    max-height: 360px;
+    border-radius: 50%;
+}
+
+#topSectionLND > h1{
+    font-size: 32pt;
+    max-width: 475px;
+    max-height: 360px;
+}
 /*!SECTION
 //////////////////////////////////////////////////////
 SECTION SHOP SELECTORS
