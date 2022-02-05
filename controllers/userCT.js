@@ -6,6 +6,7 @@ const db = require("../models");
 const user = (req,res) =>{
     res.render("user/collection", {
         user: db.landingMD.testDBLink(),
+        user2: req.user
     })
 }
 const newProduct = (req, res) => {
@@ -13,7 +14,7 @@ const newProduct = (req, res) => {
     db.Product.find({}, (err, foundProducts) => {
         if (err) res.send(err);
 
-        const context = { Product: foundProducts };
+        const context = { Product: foundProducts, user2: req.user};
         res.render("user/new", context)
     });
 };
