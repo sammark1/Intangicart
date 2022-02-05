@@ -34,7 +34,8 @@ const PORT = process.env.PORT || 4000; // full caps signify a config variable
 /* ====== App Configuration  ====== */
 // app.set
 app.set('view engine', 'ejs');
-app.use(express.static('public'))
+app.use(methodOverride('_method'));
+app.use(express.static('public'));
 app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
