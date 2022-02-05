@@ -14,7 +14,7 @@ const newProduct = (req, res) => {
     db.Product.find({}, (err, foundProducts) => {
         if (err) res.send(err);
 
-        const context = { Product: foundProducts };
+        const context = { Product: foundProducts, user2: req.user};
         res.render("user/new", context)
     });
 };
