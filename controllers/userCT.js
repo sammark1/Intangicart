@@ -27,7 +27,7 @@ const create = function(req, res) {
             if (err) res.send(err);
             // update the author articles array
              foundUser.userCollection.push(createdProducts); // adds article to author
-            createdProducts.owner.push(foundUser);
+            createdProducts.owner =foundUser;
            
             foundUser.save(); //saving the relationship to the database and commits to memory
             createdProducts.save();
