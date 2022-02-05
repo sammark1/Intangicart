@@ -35,9 +35,62 @@ const create = function(req, res) {
         });
     }
 )};
+const show = function(req, res) {
+    db.Product.findById(req.params.id)
+    // turns ids into the data from their model
+        //.populate("products")
+        // functioning like db.Author.findById()
+        // allowing us to reference documents in other collections by automatically replacing the specified path/"field" in the document(s) from other collections
+        .exec((err, foundProducts) => {
+            if (err) res.send(err);
+
+            const context = {  Product: foundProducts };
+
+            res.render("user/show", context)
+        });
+};
+const idx = (req, res) => {
+    db.Product.find({}, (err, foundProducts) => {
+        if (err) res.send(err);
+        const context = { Product: foundProducts };
+        res.render("user/index", context)
+    });
+};
+
+const edit = function(req, res){
+    console.log(req.params.id)
+    db.Product.findById(req.params.id, (err, foundProducts) => {
+       
+        if (err) res.send(err);
+
+        const context = { Product: foundProducts }
+
+        res.render("user/edit", context)
+    });
+};
+const update = function(req, res) {
+    db.Product.findByIdAndUpdate(
+        req.params.id,
+        { 
+           name: req.body.name
+        },
+        { new: true, returnOriginal: false },
+    
+        // callback function AFTER the update has completed
+        (err, updatedProduct) => {
+            if (err) res.send(err);
+
+            res.redirect(`/${updatedProduct._id}`);
+        }
+    );
+}
 
 module.exports = {
     user,
     newProduct,
-    create
+    create,
+    show,
+    idx,
+    edit,
+    update,
 }

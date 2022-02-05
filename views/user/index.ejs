@@ -1,0 +1,15 @@
+<%- include('../partials/header') %>
+<h2>List of Products</h2>
+
+<% if(!Product.length) { %>
+<p>There are no articles available yet.</p>
+<% } %>
+
+<ul>
+    <% Product.forEach(product => { %>
+    <li>
+        <a href="/<%= product._id %>"> <%= product.name %></a>
+    </li>
+    <% })%>
+</ul>
+            <%- include('../partials/footer') %>

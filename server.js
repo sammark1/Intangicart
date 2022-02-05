@@ -6,6 +6,7 @@ const express = require('express');
 const morgan = require("morgan");
 const session = require("express-session");
 const passport = require("passport");
+const methodOverride= require("method-override");
 
 
 
@@ -34,6 +35,7 @@ const PORT = process.env.PORT || 4000; // full caps signify a config variable
 /* ====== App Configuration  ====== */
 // app.set
 app.set('view engine', 'ejs');
+app.use(methodOverride("_method"))
 app.use(express.static('public'))
 app.use(morgan('dev'));
 app.use(express.json());

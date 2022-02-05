@@ -1,2 +1,25 @@
 <!--This is a partial view that sits over top of the user.
 It allows the user to edit an item.-->
+<%- include('../partials/header') %>
+<h1>Edit <%= Product.name %></h1>
+			<form action="/<%= Product._id%>?_method=PUT" method="POST">
+				<p>
+					<input
+						type="text"
+						name="name"
+						placeholder="Name"
+						value="<%= Product.name %>"
+					/>
+				</p>
+			 <p>
+					<input
+						type="text"
+						name="price"
+						placeholder="Price"
+						value="<%= //Product.price %>"
+					/>
+				</p>
+           
+				<input type="submit" value="Update Product" />
+			</form>
+<%- include('../partials/footer') %>
