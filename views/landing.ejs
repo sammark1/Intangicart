@@ -9,13 +9,17 @@
         <p><%=console.log(Products[0])%></p>
         <div id="shopGridLND">
             <!-- for 6 random items in item collection retrieve name, image, and price as well as a link -->
+            <%for(i=0;i<6;i++){%>
+                <%const product=Products[Math.floor(Math.random()*Products.length)];%> 
             <div class="shopCardLND">
                 <img src="/imgs/sitemedia/chup.png">
                 <span>
-                <h2>Riceroni Pizza</h2>
-                <p>$100</p>
+                <h2><%=product.name%></h2>
+                <!-- REVIEW SET BELOW TO PRICE -->
+                <p><%=product.tag%></p>
                 </span>
             </div>
+            <%} %>
         </div>
     </div>
     
