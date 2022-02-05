@@ -6,16 +6,10 @@ const passport = require("passport");
 //     res.redirect("/landing");
 // });
 router.get("/", function(req,res){
-    res.render("landing", {
-        user2: req.user,
-        
-    });
+  res.redirect("/landing");
 });
 
-
- router.get("/landing", ctrl.landingCT.landing)
- //router.get("/shop", ctrl.landingCT.shop);
- //temporary route while all routes go through landingRT
+ router.get("/landing",ctrl.landingCT.landing);
 
 // Google OAuth login route
 router.get(
