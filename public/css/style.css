@@ -1,8 +1,12 @@
-/* root: define all colors here*/
+/* root: define all fonts and colors here*/
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600&family=Zen+Dots&display=swap');
 :root{
     --primary-color :           #51238b;
+    --primary-color-lighter:    #8a5ac4;
     --secondary-color:          #fbfbf7;
     --white:                    #ffffff;
+    --gray:                     #cbcbcb;
+    --login-color:              #50D76D;
 }
 
 /*
@@ -10,15 +14,169 @@
 SECTION HEADER/FOOTER SELECTORS
 //////////////////////////////////////////////////////
 */
+body{
+    max-width: 1440px;
+    margin:auto;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
 #headerBar{
     display:flex;
     flex-direction: row;
-    justify-content: space-between;
+    /* justify-content: center; */
+    align-items: center;
+    padding:0.5rem 0 0.5rem 0;
     background-color: var(--primary-color);
     color:var(--white);
 }
-#headerBar > a{
-    color:white;
+
+#intangicart{
+    font-family: 'Zen Dots', cursive;
+    font-size: 24pt;
+    margin: 0rem auto 0rem 1rem;
+    
+}
+
+#headerIcon{
+    font-size: 32pt;
+    margin: 0rem 0rem 0rem 1rem;
+    
+}
+
+#searchbar{
+    /* align-self: center; */
+    margin: 0rem 1rem 0rem 1rem;
+    padding: 5px;
+    border-radius: 20px;
+    height:1.5em;
+    background-color: var(--white);
+    color: black;
+    flex-grow: 1;
+    max-width: 20rem;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+}
+#searchbar > form{
+    flex-grow: 1;
+}
+#searchbar > form > input{
+    width: 95%;
+    border: 0px;
+    font-size: 14pt;
+}
+
+#userCurrency{
+    margin-right: 1rem;
+}
+
+#headerButtons{
+    margin-left: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.authButton{
+    color: var(--white);
+    background-color: rgba(0, 0, 0, 0);
+    border:0px;
+    border-radius: 0px;
+    font-size: 14pt;
+    margin-right: 1rem;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.signupButton{
+    color: var(--white);
+    background-color: var(--login-color);
+    font-size:14pt;
+    border:0px;
+    border-radius: 20px;
+    padding: 10px 10px 10px 10px;
+    margin-right: 1rem;
+    font-family: 'Josefin Sans', sans-serif; 
+}
+
+#footer{
+    background-color: var(--gray);
+    display:flex;
+    flex-direction:row;
+    justify-content: space-around;
+}
+
+/*!SECTION
+//////////////////////////////////////////////////////
+SECTION LANDING SELECTORS
+//////////////////////////////////////////////////////
+*/
+#topSectionLND{
+    background-color: var(--secondary-color);
+    height: 475px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#topSectionLND > img{
+    max-width: 360px;
+    max-height: 360px;
+    border-radius: 50%;
+}
+
+#topSectionLND > h1{
+    font-size: 32pt;
+    max-width: 475px;
+    max-height: 360px;
+}
+#shopLND{
+    background-color: var(--primary-color);
+    color:var(--white);
+    padding: 1rem 0 1rem 0;
+}
+#shopLND > h1{
+    text-align: center;
+    margin: 1rem;
+}
+#shopGridLND{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);;
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 1rem;    
+    grid-row-gap: 1rem;    
+    margin:2rem 4rem 2rem 4rem;
+}
+.shopCardLND{
+    color:var(--primary-color);
+    background-color: var(--secondary-color);
+    padding: 0.5rem;
+    border-radius: 1rem;
+    display:flex;
+    flex-direction: row;
+    max-height: 6rem;
+    overflow:auto;
+
+}
+.shopCardLND:hover{
+    color:var(--secondary-color);
+    background-color: var(--primary-color-lighter);
+    padding: 0.5rem;
+    border-radius: 1rem;
+    display:flex;
+    flex-direction: row;
+    max-height: 6rem;
+    overflow:auto;
+
+}
+.shopCardLND > img{
+    width:25%;
+    border-radius: 50%;
+    margin-right: auto;
+}
+.shopCardLND > span{
+    text-align: center;
+    margin-right: auto;
 }
 /*!SECTION
 //////////////////////////////////////////////////////
@@ -52,3 +210,9 @@ SECTION USER/COLLECTION SELECTORS
 */
 
 /*ANCHOR EDIT COLLECTION OVERLAY SELECTORS*/
+
+/*!SECTION
+//////////////////////////////////////////////////////
+SECTION GENERAL SELECTORS
+//////////////////////////////////////////////////////
+*/
