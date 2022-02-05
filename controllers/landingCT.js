@@ -2,13 +2,20 @@
 RELATED TO THE LANDING PAGE AND OAUTH*/
 
 const db = require("../models");
+const Products = require("../models/products")
 
 const landing = (req, res) => {
-    //NOTE match EJS
-    res.render("landing", {
-        landingTest: db.landingMD.getAll(),
-        user2: req.user
+    Products.find({},function(err,products){
+        const context = {
+            user2: req.user,
+            Products: products,
+        }
+        res.render("landing",context);
     })
+    // res.render("landing", {
+    //     user2: req.user,
+    //     testItem:testboi,
+    // });
 }
 
 module.exports = {

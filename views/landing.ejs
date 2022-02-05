@@ -1,65 +1,25 @@
 <%- include('./partials/header') %>
-    <!-- <h1>INTANGICART</h1>
-    <P>YOUR ROUTING WORKS</P>
-    <li>
-        <li><a href="/shop">shop shortcut (bypss oauth)</a></li>
-        <%// if (user2) { %>
-            <a href="/logout"> <i>test</i> Log Out</a>
-        <%// } else { %>
-            <a href="/auth/google"> <i>test</i> Login with Google</a>
-        <%// } %>
-    </li> -->
     <div id="topSectionLND">
         <h1>Your one stop shop for all things with no value unless you trade them</h1>
         <img src="/imgs/sitemedia/chup.png" alt="chup">
     </div>
     <div id="shopLND">
         <h1>Start Shopping</h1>
+        <%= console.log("//////////////////////////////////") %> 
+        <p><%=console.log(Products[0])%></p>
         <div id="shopGridLND">
             <!-- for 6 random items in item collection retrieve name, image, and price as well as a link -->
+            <%for(i=0;i<6;i++){%>
+                <%const product=Products[Math.floor(Math.random()*Products.length)];%> 
             <div class="shopCardLND">
                 <img src="/imgs/sitemedia/chup.png">
                 <span>
-                <h2>Riceroni Pizza</h2>
-                <p>$100</p>
+                <h2><%=product.name%></h2>
+                <!-- REVIEW SET BELOW TO PRICE -->
+                <p><%=product.tag%></p>
                 </span>
             </div>
-            <div class="shopCardLND">
-                <img src="/imgs/sitemedia/chup.png">
-                <span>
-                <h2>TitleTooLong Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem voluptatibus reprehenderit consequatur sapiente a labore nemo! Iure soluta labore officiis delectus nam ducimus maiores voluptatibus nemo eos? Veniam, obcaecati odit?</h2>
-                <p>$100</p>
-                </span>
-            </div>
-            <div class="shopCardLND">
-                <img src="/imgs/sitemedia/chup.png">
-                <span>
-                <h2>Riceroni Pizza</h2>
-                <p>$100</p>
-                </span>
-            </div>
-            <div class="shopCardLND">
-                <img src="/imgs/sitemedia/chup.png">
-                <span>
-                <h2>Riceroni Pizza</h2>
-                <p>$100</p>
-                </span>
-            </div>
-            <div class="shopCardLND">
-                <img src="/imgs/sitemedia/chup.png">
-                <span>
-                <h2>Riceroni Pizza</h2>
-                <p>$100</p>
-                </span>
-            </div>
-            <div class="shopCardLND">
-                <img src="/imgs/sitemedia/chup.png">
-                <span>
-                <h2>Riceroni Pizza</h2>
-                <p>$100</p>
-                </span>
-            </div>
-            
+            <%} %>
         </div>
     </div>
     
