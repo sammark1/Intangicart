@@ -24,7 +24,6 @@ passport.use(
                     // we have a new user via OAuth!
                     const newUser = new User({ 
                       googleId: profile.id,
-
                       name: profile.displayName,
                       userIcon: profile.photos[0].value,
                       userEmail: profile.emails[0].value,
@@ -54,7 +53,7 @@ passport.serializeUser(function (user, done) {
 
 passport.deserializeUser(function (id, done) {
     User.findById(id, function (err,user) {
-        console.log(user)
+        //console.log(user)
         done(err, user);
 });
 });
