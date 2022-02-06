@@ -1,11 +1,12 @@
 <%- include('../partials/header') %>
 <div id="profileUSR">
-    <img src="/imgs/sitemedia/chup.png" alt="user profile">
+    <!-- <img src="/imgs/sitemedia/chup.png" alt="user profile"> -->
     <h1> Keanu4President2008</h1>
     <p><%=user[0].email %> </p>
     <p>user since 04/07/1999</p>
 </div>
 <div id="collectionUSR">
-    
+    <button id="collectionNewUSR">New Product(no function yet)</button>
+    <%- include('./newPartial') %>
 </div>
 <%- include('../partials/footer') %>
