@@ -2,17 +2,33 @@
 RELATED TO THE USER PROFILE (NOT COLLECTION)*/
 
 const db = require("../models");
+const Users = require("../models/user");
 const Products = require("../models/products");
 
 const user = function (req,res) {
     Products.find({},function(err,products){
-        const context = {
-            user2: req.user,
-            Products: products,
-        }
-        res.render("user/collection",context);
+        Users.find({name:req.user.name},function(err,foundUser){
+            if(err){return res.redirect("/")}
+            const context = {
+                user2: req.user,
+                Products: products,
+                User:foundUser,
+            }
+            console.log(foundUser)
+            res.render("user/collection",context);
+        })
     })
 }
+// const user = function (req,res) {
+//     Products.find({},function(err,products){
+//         const context = {
+//             user2: req.user,
+//             Products: products,
+//         }
+//         res.render("user/collection",context);
+//         console.log(req.user);
+//     })
+// }
 
 // const user = (req,res) =>{
 //     res.render("user/collection", {
