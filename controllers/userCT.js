@@ -59,7 +59,7 @@ const create = function(req, res) {
            
             foundUser.save(); //saving the relationship to the database and commits to memory
             createdProducts.save();
-            res.redirect("/")
+            res.redirect("/user")
         });
     }
 )};

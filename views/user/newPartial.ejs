@@ -1,12 +1,13 @@
 <div>
     <div>
         <p>hello I'm a card</p>
-        <form>
+        <form action="/user/create" method="POST">
+            <p><%=Products[0].name%> </p>
             <label for="iname">Item Name:</label>
-            <input type="text">
+            <input type="text" name="name" placeholder="Name the new item" >
             <label for="iprice">Sell Price:</label>
-            <input type="text">
-            <button type="submit">submit</button>
+            <input type="text" name="price" placeholder="Set the price" >
+            <button type="submit"  value="Create Product">submit</button>
         </form>
     </div>
 </div>
