@@ -1,5 +1,5 @@
 const db = require("../config/database")
-
+//REVIEW REMOVE PSEUDO DB
 function getAll() {
     return [{test: "Test complete"}];
 }

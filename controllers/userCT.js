@@ -2,13 +2,24 @@
 RELATED TO THE USER PROFILE (NOT COLLECTION)*/
 
 const db = require("../models");
+const Products = require("../models/products");
 
-const user = (req,res) =>{
-    res.render("user/collection", {
-        user: db.landingMD.testDBLink(),
-        user2: req.user
+const user = function (req,res) {
+    Products.find({},function(err,products){
+        const context = {
+            user2: req.user,
+            Products: products,
+        }
+        res.render("user/collection",context);
     })
 }
+
+// const user = (req,res) =>{
+//     res.render("user/collection", {
+//         user2: req.user,
+//         products: Products,
+//     })
+// }
 const newProduct = (req, res) => {
     // giving the new ejs template access to all products for reference
     db.Product.find({}, (err, foundProducts) => {
