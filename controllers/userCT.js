@@ -54,6 +54,7 @@ const show = function(req, res) {
 const idx = (req, res) => {
     db.Product.find({}, (err, foundProducts) => {
         if (err) res.send(err);
+
         const context = { Product: foundProducts, user2: req.user, Onpage: "productPage" };
         res.render("user/index", context)
     });
