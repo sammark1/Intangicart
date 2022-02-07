@@ -9,6 +9,7 @@ const landing = (req, res) => {
         const context = {
             user2: req.user,
             Products: products,
+            Onpage: "userpage"
         }
         res.render("landing",context);
     })

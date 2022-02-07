@@ -8,6 +8,7 @@ const Products = require("../models/products");
 const { User } = require("../models");
 const { deleteOne } = require("../models/user");
 
+
 const user = function (req,res) {
     Users.find({name:req.user.name},function(err,foundUser){
         if(err) res.send(err);
@@ -18,10 +19,13 @@ const user = function (req,res) {
                 Products: userProducts,
                 User:foundUser,
                 page:"user",
+              Onpage: "userpage"
             }
             //console.log(userProducts)
             res.render("user/collection",context);
         })
+
+
     })
 }
 // const user = function (req,res) {
@@ -60,7 +64,7 @@ const newProduct = (req, res) => {
     db.Product.find({}, (err, foundProducts) => {
         if (err) res.send(err);
 
-        const context = { Product: foundProducts, user2: req.user};
+        const context = { Product: foundProducts, user2: req.user, Onpage: "userpage"};
         res.render("user/new", context)
     });
 };
@@ -91,7 +95,7 @@ const show = function(req, res) {
         .exec((err, foundProducts) => {
             if (err) res.send(err);
 
-            const context = {  Product: foundProducts };
+            const context = {  Product: foundProducts , user2: req.user, Onpage: "userpage"  };
 
             res.render("user/show", context)
         });
@@ -99,7 +103,8 @@ const show = function(req, res) {
 const idx = (req, res) => {
     db.Product.find({}, (err, foundProducts) => {
         if (err) res.send(err);
-        const context = { Product: foundProducts };
+
+        const context = { Product: foundProducts, user2: req.user, Onpage: "productPage" };
         res.render("user/index", context)
     });
 };
@@ -110,7 +115,9 @@ const edit = function(req, res){
        
         if (err) res.send(err);
 
-        const context = { Product: foundProducts,user2: req.user,}
+
+        const context = { Product: foundProducts, user2: req.user, Onpage: "userpage" }
+
 
         res.render("user/editPartial", context)
     });
