@@ -12,7 +12,9 @@
         <div id="productUSR">
             <img src="<%=product.image%>">
             <p><%=product.name%> : $<%=product.price%></p>
-            <p><%=product.listed%></p>
+            <%if(product.listed){%> 
+                <p>listed</p>
+            <% } %>  
             <form method="GET" action="/<%=product._id%>/edit">
                 <button>Edit</button>
             </form>

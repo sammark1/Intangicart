@@ -4,6 +4,11 @@ It allows the user to edit an item.-->
 <h1>Edit <%= Product.name %></h1>
 			<form action="/<%= Product._id%>?_method=PUT" method="POST">
 				<p>
+                    <% if(Product.listed){%>
+                        yolo
+                    <% }else{ %>
+                        not listed    
+                    <% } %> 
                     <img src='<%=Product.image%>' alt="product image">
                     <input
 						type="text"
@@ -26,4 +31,7 @@ It allows the user to edit an item.-->
                 </p>
 				<input type="submit" value="Update Product" />
 			</form>
+            <form action="/user" method="GET">
+                <input type="submit" value="Cancel" />
+            </form>
 <%- include('../partials/footer') %>
