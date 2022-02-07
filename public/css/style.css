@@ -215,7 +215,16 @@ SECTION SHOP SELECTORS
 SECTION USER/COLLECTION SELECTORS
 //////////////////////////////////////////////////////
 */
-
+#productUSR{/*TEMPORARY STYLING FOR TESTING*/
+    width:fit-content;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    padding: .5rem;
+    margin:.5rem;
+}
+#productUSR > img{
+    max-height: 4rem;
+}
 /*ANCHOR EDIT COLLECTION OVERLAY SELECTORS*/
 
 /*!SECTION
