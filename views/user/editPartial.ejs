@@ -1,7 +1,8 @@
 <div>
     <div>
-        <p>hello I'm the New Item card</p>
+        <p>hello I'm the Edit Item card</p>
         <form action="/user/create" method="POST">
+            <p><%=Products[0].name%> </p>
             <label for="iname">Item Name:</label>
             <input type="text" name="name" placeholder="Name the new item" >
             <label for="iprice">Sell Price:</label>

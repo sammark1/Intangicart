@@ -6,19 +6,33 @@ const Users = require("../models/user");
 const Products = require("../models/products");
 
 const user = function (req,res) {
-    Products.find({},function(err,products){
-        Users.find({name:req.user.name},function(err,foundUser){
+    Users.find({name:req.user.name},function(err,foundUser){
+        Products.find({owner:foundUser[0]._id},function(err,userProducts){
             if(err){return res.redirect("/")}
             const context = {
                 user2: req.user,
-                Products: products,
+                Products: userProducts,
                 User:foundUser,
             }
-            console.log(foundUser)
+            console.log(userProducts)
             res.render("user/collection",context);
         })
     })
 }
+// const user = function (req,res) {
+//     Products.find({},function(err,products){
+//         Users.find({name:req.user.name},function(err,foundUser){
+//             if(err){return res.redirect("/")}
+//             const context = {
+//                 user2: req.user,
+//                 Products: products,
+//                 User:foundUser,
+//             }
+//             console.log(foundUser)
+//             res.render("user/collection",context);
+//         })
+//     })
+// }
 // const user = function (req,res) {
 //     Products.find({},function(err,products){
 //         const context = {
