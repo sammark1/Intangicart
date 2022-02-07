@@ -2,13 +2,15 @@
 RELATED TO THE USER PROFILE (NOT COLLECTION)*/
 
 const db = require("../models");
+//FIXME the below two lines are unnecessary. just use db.User or db.Product
 const Users = require("../models/user");
 const Products = require("../models/products");
 
 const user = function (req,res) {
     Users.find({name:req.user.name},function(err,foundUser){
+        if(err) res.send(err);
         Products.find({owner:foundUser[0]._id},function(err,userProducts){
-            if(err){return res.redirect("/")}
+            if(err) res.send(err);
             const context = {
                 user2: req.user,
                 Products: userProducts,
@@ -126,6 +128,16 @@ const update = function(req, res) {
         }
     );
 }
+const destroy = function (req,res) {
+    db.Product.findbyIDAndDelete(req.params.id,function (err, deletedProduct){
+        if(err) res.send(err);
+        db.User.findById(deletedProduct.owner,function(err,foundUser){
+            foundUser.userCollection.remove(deletedProduct);
+            foundUser.save();
+            res.redirect("/user");
+        })
+    })
+}
 
 module.exports = {
     user,
@@ -135,4 +147,5 @@ module.exports = {
     idx,
     edit,
     update,
+    destroy,
 }

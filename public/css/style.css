@@ -208,7 +208,12 @@ SECTION SHOP SELECTORS
 SECTION USER/COLLECTION SELECTORS
 //////////////////////////////////////////////////////
 */
-
+#productUSR{/*TEMPORARY STYLING*/
+    height:2rem;
+    width:20rem;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
 /*ANCHOR EDIT COLLECTION OVERLAY SELECTORS*/
 
 /*!SECTION
