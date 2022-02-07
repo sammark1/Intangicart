@@ -45,7 +45,7 @@ const show = function(req, res) {
         .exec((err, foundProducts) => {
             if (err) res.send(err);
 
-            const context = {  Product: foundProducts };
+            const context = {  Product: foundProducts, user2: req.user };
 
             res.render("user/show", context)
         });
@@ -53,7 +53,7 @@ const show = function(req, res) {
 const idx = (req, res) => {
     db.Product.find({}, (err, foundProducts) => {
         if (err) res.send(err);
-        const context = { Product: foundProducts };
+        const context = { Product: foundProducts, user2: req.user };
         res.render("user/index", context)
     });
 };
@@ -64,7 +64,7 @@ const edit = function(req, res){
        
         if (err) res.send(err);
 
-        const context = { Product: foundProducts }
+        const context = { Product: foundProducts, user2: req.user }
 
         res.render("user/edit", context)
     });
