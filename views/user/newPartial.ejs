@@ -2,10 +2,14 @@
     <div>
         <p>hello I'm the New Item card</p>
         <form action="/user/create" method="POST">
-            <label for="iname">Item Name:</label>
+            <label>Listed:</label>
+            <input type="checkbox" name="listed">
+            <label>Item Name:</label>
             <input type="text" name="name" placeholder="Name the new item" >
-            <label for="iprice">Sell Price:</label>
+            <label">Sell Price:</label>
             <input type="text" name="price" placeholder="Set the price" >
+            <label">Image:</label>
+            <input type="text" name="image" placeholder="insert URL" >
             <button type="submit"  value="Create Product">submit</button>
         </form>
     </div>

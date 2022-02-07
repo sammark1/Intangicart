@@ -1,6 +1,6 @@
 <%- include('../partials/header') %>
 <div id="profileUSR"><!--This Div for user profile related things-->
-    <!-- <img src="/imgs/sitemedia/chup.png" alt="user profile"> -->
+    <img src="<%=User[0].userIcon%>" alt="user profile">
     <h1><%=User[0].name%></h1>
     <p><%=User[0].userEmail %> </p>
     <!-- <p>user since 04/07/1999</p> -->
@@ -8,9 +8,14 @@
 <div id="collectionUSR"><!--This Div for user collection related things-->
     <% if(!Products.length) { %>
         <p>There are no articles available yet.</p>
-    <% } else { Products.forEach ( product => {%>
+    <% } else { Products.forEach ( (product, index) => {%>
         <div id="productUSR">
-            <p><%=product.name%> : <%=product.price%></p>
+            <img src="<%=product.image%>">
+            <p><%=product.name%> : $<%=product.price%></p>
+            <p><%=product.listed%></p>
+            <form method="GET" action="/<%=product._id%>/edit">
+                <button>Edit</button>
+            </form>
             <form method="POST" action="/user/delete/<%=product._id%>?_method=DELETE">
                 <button>Delete</button>
             </form>
@@ -21,6 +26,6 @@
     <%=//console.log(User)%> 
     <%- include('./newPartial') %>
     <p>/////////////////////////////////////////////</p>
-    <%- //include('./editPartial') %>
 </div>
 <%- include('../partials/footer') %>
+<%=console.log(page)%>

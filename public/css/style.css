@@ -215,6 +215,9 @@ SECTION USER/COLLECTION SELECTORS
     padding: .5rem;
     margin:.5rem;
 }
+#productUSR > img{
+    max-height: 4rem;
+}
 /*ANCHOR EDIT COLLECTION OVERLAY SELECTORS*/
 
 /*!SECTION

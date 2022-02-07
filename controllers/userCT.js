@@ -17,6 +17,7 @@ const user = function (req,res) {
                 user2: req.user,
                 Products: userProducts,
                 User:foundUser,
+                page:"user",
             }
             //console.log(userProducts)
             res.render("user/collection",context);
@@ -109,9 +110,9 @@ const edit = function(req, res){
        
         if (err) res.send(err);
 
-        const context = { Product: foundProducts }
+        const context = { Product: foundProducts,user2: req.user,}
 
-        res.render("user/edit", context)
+        res.render("user/editPartial", context)
     });
 };
 const update = function(req, res) {
@@ -126,7 +127,8 @@ const update = function(req, res) {
         (err, updatedProduct) => {
             if (err) res.send(err);
 
-            res.redirect(`/${updatedProduct._id}`);
+            //res.redirect(`/${updatedProduct._id}`);
+            res.redirect("/user");
         }
     );
 }
