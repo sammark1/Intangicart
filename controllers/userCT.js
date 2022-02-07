@@ -6,7 +6,8 @@ const db = require("../models");
 const user = (req,res) =>{
     res.render("user/collection", {
         user: db.landingMD.testDBLink(),
-        user2: req.user
+        user2: req.user, 
+        Onpage: "userpage"
     })
 }
 const newProduct = (req, res) => {
@@ -14,7 +15,7 @@ const newProduct = (req, res) => {
     db.Product.find({}, (err, foundProducts) => {
         if (err) res.send(err);
 
-        const context = { Product: foundProducts, user2: req.user};
+        const context = { Product: foundProducts, user2: req.user, Onpage: "userpage"};
         res.render("user/new", context)
     });
 };
@@ -45,7 +46,7 @@ const show = function(req, res) {
         .exec((err, foundProducts) => {
             if (err) res.send(err);
 
-            const context = {  Product: foundProducts, user2: req.user };
+            const context = {  Product: foundProducts , user2: req.user, Onpage: "userpage"  };
 
             res.render("user/show", context)
         });
@@ -53,7 +54,8 @@ const show = function(req, res) {
 const idx = (req, res) => {
     db.Product.find({}, (err, foundProducts) => {
         if (err) res.send(err);
-        const context = { Product: foundProducts, user2: req.user };
+
+        const context = { Product: foundProducts, user2: req.user, Onpage: "productPage" };
         res.render("user/index", context)
     });
 };
@@ -64,7 +66,7 @@ const edit = function(req, res){
        
         if (err) res.send(err);
 
-        const context = { Product: foundProducts, user2: req.user }
+        const context = { Product: foundProducts, user2: req.user, Onpage: "userpage" }
 
         res.render("user/edit", context)
     });
