@@ -5,9 +5,9 @@ It allows the user to edit an item.-->
 			<form action="/<%= Product._id%>?_method=PUT" method="POST">
 				<p>
                     <% if(Product.listed){%>
-                        yolo
+                        <input type="checkbox" name="listed" value="" checked="checked">
                     <% }else{ %>
-                        not listed    
+                        <input type="checkbox" name="listed" >
                     <% } %> 
                     <img src='<%=Product.image%>' alt="product image">
                     <input

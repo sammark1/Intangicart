@@ -116,12 +116,14 @@ const edit = function(req, res){
     });
 };
 const update = function(req, res) {
+    console.log("////////////////////////////////////body:",req.body)
     db.Product.findByIdAndUpdate(
         req.params.id,
         { 
-           name: req.body.name,
-           price: req.body.price,
-           image:req.body.image,
+            listed: Boolean(req.body.listed),
+            name: req.body.name,
+            price:req.body.price,
+            image:req.body.image,
         },
         { new: true, returnOriginal: false },
     
