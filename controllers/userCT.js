@@ -119,7 +119,9 @@ const update = function(req, res) {
     db.Product.findByIdAndUpdate(
         req.params.id,
         { 
-           name: req.body.name
+           name: req.body.name,
+           price: req.body.price,
+           image:req.body.image,
         },
         { new: true, returnOriginal: false },
     

@@ -4,22 +4,26 @@ It allows the user to edit an item.-->
 <h1>Edit <%= Product.name %></h1>
 			<form action="/<%= Product._id%>?_method=PUT" method="POST">
 				<p>
+                    <img src='<%=Product.image%>' alt="product image">
+                    <input
+						type="text"
+						name="image"
+						placeholder="Image URL"
+						value="<%= Product.image %>"
+					/>
 					<input
 						type="text"
 						name="name"
 						placeholder="Name"
 						value="<%= Product.name %>"
 					/>
-				</p>
-			 <p>
-					<input
+                    <input
 						type="text"
 						name="price"
 						placeholder="Price"
-						value="<%= //Product.price %>"
+						value="<%= Product.price %>"
 					/>
-				</p>
-           
+                </p>
 				<input type="submit" value="Update Product" />
 			</form>
 <%- include('../partials/footer') %>
