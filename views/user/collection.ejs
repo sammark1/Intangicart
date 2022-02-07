@@ -11,7 +11,9 @@
     <% } else { Products.forEach ( product => {%>
         <div id="productUSR">
             <p><%=product.name%> : <%=product.price%></p>
-            <button de>
+            <form method="POST" action="/user/delete/<%=product._id%>?_method=DELETE">
+                <button>Delete</button>
+            </form>
         </div>
     <% })} %> 
     <button id="collectionNewUSR">New Product(no function yet)</button>

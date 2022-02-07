@@ -11,6 +11,7 @@ router.get("/:id", ctrl.userCT.show);
 router.post("/:id", ctrl.userCT.update);
 router.get("/:id/edit", ctrl.userCT.edit);
 router.put("/:id", ctrl.userCT.update);
+router.delete("/user/delete/:id", ctrl.userCT.destroy);
 
 
 module.exports = router;

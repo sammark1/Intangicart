@@ -2,9 +2,11 @@
 RELATED TO THE USER PROFILE (NOT COLLECTION)*/
 
 const db = require("../models");
-//FIXME the below two lines are unnecessary. just use db.User or db.Product
+//FIXME Sam, the below two lines are unnecessary. just use db.User or db.Product.
 const Users = require("../models/user");
 const Products = require("../models/products");
+const { User } = require("../models");
+const { deleteOne } = require("../models/user");
 
 const user = function (req,res) {
     Users.find({name:req.user.name},function(err,foundUser){
@@ -16,7 +18,7 @@ const user = function (req,res) {
                 Products: userProducts,
                 User:foundUser,
             }
-            console.log(userProducts)
+            //console.log(userProducts)
             res.render("user/collection",context);
         })
     })
@@ -128,14 +130,18 @@ const update = function(req, res) {
         }
     );
 }
-const destroy = function (req,res) {
-    db.Product.findbyIDAndDelete(req.params.id,function (err, deletedProduct){
-        if(err) res.send(err);
-        db.User.findById(deletedProduct.owner,function(err,foundUser){
-            foundUser.userCollection.remove(deletedProduct);
-            foundUser.save();
-            res.redirect("/user");
+
+const destroy = function (req,res){
+    db.Product.findByIdAndDelete(req.params.id, function (err, deletedProduct){
+        if (err) res.send(err);
+        //console.log("owner",deletedProduct.owner);
+        db.User.findById(deletedProduct.owner,function (err, foundOwner){
+            if (err) res.send(err);
+            //console.log("found Owner: ",foundOwner);
+            foundOwner.userCollection.splice(foundOwner.userCollection.indexOf(deletedProduct),1);
+            foundOwner.save();
         })
+        res.redirect("/user");
     })
 }
 
