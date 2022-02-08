@@ -76,7 +76,6 @@ const create = function(req, res) {
         // .exec short for execute. similar to .then, after this query, exectute this one.
         db.User.findById(req.user).exec(function (err, foundUser) {
             if (err) res.send(err);
-            // update the author articles array
              foundUser.userCollection.push(createdProducts); // adds article to author
             createdProducts.owner =foundUser;
            
@@ -95,6 +94,7 @@ const show = function(req, res) {
         .exec((err, foundProducts) => {
             if (err) res.send(err);
 
+
             const context = {  Product: foundProducts , user2: req.user, Onpage: "userpage"  };
 
             res.render("user/show", context)
@@ -104,7 +104,8 @@ const idx = (req, res) => {
     db.Product.find({}, (err, foundProducts) => {
         if (err) res.send(err);
 
-        const context = { Product: foundProducts, user2: req.user, Onpage: "productPage" };
+        const context = { Product: foundProducts, user2: req.user, Onpage: "productPage"};
+
         res.render("user/index", context)
     });
 };
@@ -117,6 +118,7 @@ const edit = function(req, res){
 
 
         const context = { Product: foundProducts, user2: req.user, Onpage: "userpage" }
+
 
 
         res.render("user/editPartial", context)

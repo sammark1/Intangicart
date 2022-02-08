@@ -1,0 +1,14 @@
+<!--This is a partial view that sits over top of the user.
+It allows the user to edit an item.-->
+<%- include('../partials/header') %>
+<h1> you made it to confirmation <%=Product.name %></h1>
+<form action="/<%= Product._id%>?_method=PUT" method="POST">
+    
+    <input type="submit" value="Confirm Purchase" />
+</form>
+
+<form action="/shop" method="GET">
+    
+    <input type="submit" value="Cancel Purchase" />
+</form>
+<%- include('../partials/footer') %>

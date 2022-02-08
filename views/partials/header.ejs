@@ -37,7 +37,8 @@
               </form>
             </div>
             <div id =headerButtons>
-            <p id="userCurrency">$1000</p>
+              <% console.log(user2)    %>
+            <p id="userCurrency">$<%=user2.wallet%></p>
             <form action="/logout">
               <button class="authButton" type="submit">Log out</button>
             </form>
