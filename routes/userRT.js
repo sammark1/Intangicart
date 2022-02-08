@@ -3,6 +3,7 @@ const ctrl = require('../controllers');
 
 router.get("/user",ctrl.userCT.user);
 router.post("/user/create",ctrl.userCT.create)
+router.post("/user/update",ctrl.userCT.updateUSR)
 //REVIEW for necessity
 router.get("/new",ctrl.userCT.newProduct);
 router.post("/landing", ctrl.userCT.create);

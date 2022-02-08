@@ -160,6 +160,24 @@ const destroy = function (req,res){
     })
 }
 
+const updateUSR = function (req,res){
+
+    db.User.findByIdAndUpdate(
+        req.user,
+        {
+            name:req.body.userName,
+            userIcon:req.body.userIcon,
+            userEmail:req.body.userEmail,
+
+        },
+        { new: true, returnOriginal: false },
+        (err, updatedUser) => {
+            if (err) res.send(err);
+            res.redirect("/user");
+        }
+    )
+}
+
 module.exports = {
     user,
     newProduct,
@@ -169,4 +187,5 @@ module.exports = {
     edit,
     update,
     destroy,
+    updateUSR,
 }
