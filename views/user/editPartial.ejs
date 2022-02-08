@@ -1,7 +1,8 @@
 <!--This is a partial view that sits over top of the user.
 It allows the user to edit an item.-->
 <%- include('../partials/header') %>
-<h1>Edit <%= Product.name %></h1>
+<h1>Edit your exquisite <%= Product.name %></h1>
+		<div id="updateLayout">
 			<form action="/product/<%= Product._id%>?_method=PUT" method="POST">
 				<p>
                     <% if(Product.listed){%>
@@ -10,28 +11,29 @@ It allows the user to edit an item.-->
                         <input type="checkbox" name="listed" >
                     <% } %> 
                     <img src='<%=Product.image%>' alt="product image">
-                    <input
+                    <input id="editFields"
 						type="text"
 						name="image"
 						placeholder="Image URL"
 						value="<%= Product.image %>"
 					/>
-					<input
+					<input id="editFields"
 						type="text"
 						name="name"
 						placeholder="Name"
 						value="<%= Product.name %>"
 					/>
-                    <input
+                    <input id="editFields"
 						type="text"
 						name="price"
 						placeholder="Price"
 						value="<%= Product.price %>"
 					/>
                 </p>
-				<input type="submit" value="Update Product" />
+				<input id="updateButton" type="submit" value="Update Product" />
 			</form>
             <form action="/user" method="GET">
-                <input type="submit" value="Cancel" />
+                <input id="cancelUpdateButton" type="submit" value="Cancel" />
             </form>
+		</div>
 <%- include('../partials/footer') %>

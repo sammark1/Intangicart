@@ -1,14 +1,16 @@
 <!--This is a partial view that sits over top of the user.
 It allows the user to edit an item.-->
 <%- include('../partials/header') %>
-<h1> you made it to confirmation <%=Product.name %></h1>
+<h1> Do you want to purchase the <b><%=Product.name %></b> for $<%=Product.price%>?</h1>
+<div id="buttonlayoutCNFRM">
 <form action="/<%= Product._id%>?_method=PUT" method="POST">
     
-    <input type="submit" value="Confirm Purchase" />
+    <input id="purchaseButton" type="submit" value="Confirm Purchase" />
 </form>
 
 <form action="/shop" method="GET">
     
-    <input type="submit" value="Cancel Purchase" />
+    <input id="cancelPurchaseButton" type="submit" value="Cancel Purchase" />
 </form>
+</div>
 <%- include('../partials/footer') %>

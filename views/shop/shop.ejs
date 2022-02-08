@@ -1,18 +1,15 @@
 <%- include('../partials/header') %>
 
-    <h1> You are in the SHOP</h1>
+    <h1> Welcome to the Intangicart Shop</h1>
 </div>
-<div id="shopLND">
-    <h1>Start Shopping</h1>
-    <%= console.log("//////////////////////////////////") %> 
-    <p><%=console.log(Products[0])%></p>
-    <div id="shopGridLND">
+<div id="shopSHP">
+    <div id="shopGridSHP">
         <!-- for 6 random items in item collection retrieve name, image, and price as well as a link -->
         
         <%for(i=0;i<6;i++){%>
             
             <%const product=Products[Math.floor(Math.random()*Products.length)];%> 
-        <div class="shopCardLND">
+        <div class="shopCardSHP">
            
             <img src="/imgs/sitemedia/chup.png">
             <span>
@@ -21,9 +18,9 @@
             <p><%=product.price%></p>
             <form action="/<%=product._id%>/confirm" method="GET">
     
-                <input type="submit" value="Purchase" />
+                <input id="purchaseButton" type="submit" value="Purchase" />
             </form>
-         <button id="popoverCancel">Cancel</button>
+
            <!-- <button id="TestButton"> Purchase </button> -->
             
             </span>
