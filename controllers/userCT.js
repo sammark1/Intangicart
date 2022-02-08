@@ -160,8 +160,19 @@ const destroy = function (req,res){
     })
 }
 const destroyUser = function (req,res){
-    db.User.findByIdAndDelete(req.params.id, function (err, deletedProduct){
+    db.User.findByIdAndDelete(req.params.id, function (err, deletedUser){
         if (err) res.send(err);
+        db.User.find({name:"Intangicart"},function(err,Intangicart){
+            if (err) res.send(err);
+            deletedUser.userCollection.forEach(element => {
+                db.Product.findById(element,function(err,foundElement){
+                    foundElement.owner=Intangicart[0];
+                    foundElement.save();
+                })
+                Intangicart[0].userCollection.push(element);
+            });
+            Intangicart[0].save();
+        })
         res.redirect("/landing");
     })
 }
