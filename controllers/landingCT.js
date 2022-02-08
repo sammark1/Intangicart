@@ -9,15 +9,10 @@ const landing = (req, res) => {
         const context = {
             user2: req.user,
             Products: products,
-            //REVIEW SET UP A LANDING PAGE OPTION
-            Onpage: "userpage"
+            Onpage: "userpage" //Used for determining which Icon to show in the Nav bar for routing the user
         }
         res.render("landing",context);
     })
-    // res.render("landing", {
-    //     user2: req.user,
-    //     testItem:testboi,
-    // });
 }
 
 module.exports = {

@@ -64,6 +64,5 @@ app.get('/', function(req, res) {
 /* ====== Server bind  ====== */
 // bind the application to the port via app.listen(number, optional function to do after bind)
 app.listen(PORT, function () {
-  //FIXME CHANGE THE CONSOLE LOG!
-	console.log(`i'm a little server live on port http://localhost:${PORT}`);
+	console.log(`Intangicart servers are live on port http://localhost:${PORT}`);
 });
