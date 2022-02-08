@@ -274,15 +274,103 @@ SECTION SHOP SELECTORS
 SECTION USER/COLLECTION SELECTORS
 //////////////////////////////////////////////////////
 */
-#productUSR{/*TEMPORARY STYLING FOR TESTING*/
-    width:fit-content;
+#collectionUSR {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);;
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: .5rem;    
+    grid-row-gap: .5rem;    
+    margin:.5rem 1rem .5rem 1rem;
+}
+
+#productUSR{
+    display: flexbox;
+    justify-content: center;
+    align-items: flex-end;
     background-color: var(--primary-color);
     color: var(--secondary-color);
     padding: .5rem;
     margin:.5rem;
+    overflow:auto;
 }
 #productUSR > img{
     max-height: 4rem;
+}
+.profileUpdate {
+    border-radius: 2rem;
+    color:var(--primary-color-lighter)
+}
+#profileUpdateButton {
+    border-radius: 2rem;
+    color:var(--primary-color-lighter);
+    background-color:var(--login-color);
+}
+#editProductButton {
+    border-radius: 15%;
+    color:var(--gray);
+    background-color:var(--primary-color-lighter);
+
+}
+#deleteProductButton {
+    border-radius: 15%;
+    color:var(--gray);
+    background-color:var(--primary-color)
+}
+#newItemCard {
+    display: flexbox;
+    justify-content: space-evenly;
+}
+#deleteProfileButton {
+    margin-top: 1rem;
+    margin-left: .5rem;
+    border-radius: 2rem;
+
+}
+#deleteProfileConfirm {
+    margin-top: 1rem;
+    margin-left: .5rem;
+    border-radius: 2rem;
+    color:red;
+    background-color:var(--primary-color);
+}
+#deleteProfileCancel {
+    margin-left: .5rem;
+    border-radius: 2rem;
+    color:var(--primary-color-lighter);
+    background-color:var(--login-color);
+}
+#createItemInputs {
+    border-radius: 2rem;
+    color:var(--primary-color-lighter)
+}
+#createNewItemButton {
+    border-radius: 15%;
+    color:var(--login-color);
+    background-color:var(--primary-color-lighter);
+}
+#updateLayout {
+    display: grid;
+    grid-template-columns:(3, 1fr);;
+    grid-template-rows:(2, 1fr);
+    grid-column-gap: .75rem;    
+    grid-row-gap: .5rem;   
+    margin-bottom: .5rem; 
+}
+#editFields {
+    display: flexbox;
+    justify-content: space-evenly;
+    border-radius: 2rem;
+    color:var(--primary-color-lighter);
+}
+#updateButton {
+    border-radius: 1rem;
+    color:var(--login-color);
+    background-color:var(--primary-color-lighter);
+}
+#cancelUpdateButton {
+    border-radius: 1rem;
+    color:var(--gray);
+    background-color:var(--primary-color-lighter);
 }
 /*ANCHOR EDIT COLLECTION OVERLAY SELECTORS*/
 

@@ -12,9 +12,10 @@
     <button id="profileEditButton">Edit Profile</button>
     <!-- <p>user since 04/07/1999</p> -->
 </div>
+
 <div id="collectionUSR"><!--This Div for user collection related things-->
     <% if(!Products.length) { %>
-        <p>There are no articles available yet.</p>
+        <p>There are no Products available yet.</p>
     <% } else { Products.forEach ( (product, index) => {%>
         <div id="productUSR">
             <img src="<%=product.image%>">
@@ -23,22 +24,21 @@
                 <p>listed</p>
             <% } %>  
             <form method="GET" action="/product/<%=product._id%>/edit">
-                <button>Edit</button>
+                <button id="editProductButton">Edit</button>
             </form>
             <form method="POST" action="/user/delete/<%=product._id%>?_method=DELETE">
-                <button>Delete</button>
+                <button id="deleteProductButton">Delete</button>
             </form>
         </div>
     <% })} %> 
-    <button id="collectionNewUSR">New Product(no function yet)</button>
-    <!-- <p><%=//(Products[0].name);%> </p> -->
-    <%=//console.log(User)%> 
+    </div>
+    <div id="newItemCardUSR" >
     <%- include('./newPartial') %>
+    </div>
     <button id="deleteProfileButton">Delete Profile</button>
-    <form id="deleteProfileConfirm" method="POST" action="/user/deleteuser/<%=user2.id%>?_method=DELETE">
-        <input type="submit" value="Delete Profile">
+    <form  method="POST" action="/user/deleteuser/<%=user2.id%>?_method=DELETE">
+        <input id="deleteProfileConfirm" type="submit" value="Delete Profile">
     </form>
     <button id="deleteProfileCancel">Cancel</button>
 </div>
 <%- include('../partials/footer') %>
-<%=//console.log(page)%>
