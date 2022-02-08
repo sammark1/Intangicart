@@ -105,7 +105,7 @@ const destroy = function (req,res){
         res.redirect("/user");
     })
 }
-//delete function to remove the given user profile
+//delete function to remove the given user profile, Nice work by Sam!
 const destroyUser = function (req,res){
     db.User.findByIdAndDelete(req.params.id, function (err, deletedUser){
         if (err) res.send(err);
