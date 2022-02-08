@@ -24,3 +24,18 @@ $editUserProfileButton.on("click",function(){
     $profileEdit.show();
     $editUserProfileButton.hide();
 });
+const $deleteProfileButton =$('#deleteProfileButton');
+const $deleteProfileConfirm =$('#deleteProfileConfirm');
+const $deleteProfileCancel=$('#deleteProfileCancel');
+$deleteProfileConfirm.hide();
+$deleteProfileCancel.hide();
+$deleteProfileButton.on('click',function(){
+    $deleteProfileConfirm.show();
+    $deleteProfileCancel.show();
+    $deleteProfileButton.hide();
+});
+$deleteProfileCancel.on('click',function(){
+    $deleteProfileConfirm.hide();
+    $deleteProfileCancel.hide();
+    $deleteProfileButton.show();
+});
