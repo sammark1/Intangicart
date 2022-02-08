@@ -20,7 +20,14 @@
 <body>
   <nav>
       <div id="headerBar">
-        <p class="material-icons" id="headerIcon">menu</p>
+        <div id=icons>
+        <% if (Onpage == "userpage") { %>
+          <a href="/shop" class="material-icons" id="storefront">storefront</a>
+           
+        <% } else { %>
+          <a href="/user" class="material-icons" id="account_circle">account_circle</a>
+        <% } %>
+        </div>
         <h1 id="intangicart">Intangicart</h1>
           <% if (user2) { %>
             <div id="searchbar">

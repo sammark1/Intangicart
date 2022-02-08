@@ -4,6 +4,7 @@ RELATED TO THE STORE AND COLLECTIONS*/
 const db = require("../models");
 const Products = require("../models/products")
 //
+
 // const shop = (req,res) => {
 //     res.render("shop/shop",{user2: req.user})
 // }
@@ -12,9 +13,11 @@ const shop = (req, res) => {
         const context = {
             user2: req.user,
             Products: products,
+          Onpage: "productPage",
         }
         res.render("shop/shop",context);
     })
+
 }
 const purchase = function (req,res){
     db.Product.findById(req.params.id, function (err, purchaseProduct){

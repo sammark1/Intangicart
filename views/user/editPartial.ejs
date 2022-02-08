@@ -1,0 +1,37 @@
+<!--This is a partial view that sits over top of the user.
+It allows the user to edit an item.-->
+<%- include('../partials/header') %>
+<h1>Edit <%= Product.name %></h1>
+			<form action="/<%= Product._id%>?_method=PUT" method="POST">
+				<p>
+                    <% if(Product.listed){%>
+                        <input type="checkbox" name="listed" value="" checked="checked">
+                    <% }else{ %>
+                        <input type="checkbox" name="listed" >
+                    <% } %> 
+                    <img src='<%=Product.image%>' alt="product image">
+                    <input
+						type="text"
+						name="image"
+						placeholder="Image URL"
+						value="<%= Product.image %>"
+					/>
+					<input
+						type="text"
+						name="name"
+						placeholder="Name"
+						value="<%= Product.name %>"
+					/>
+                    <input
+						type="text"
+						name="price"
+						placeholder="Price"
+						value="<%= Product.price %>"
+					/>
+                </p>
+				<input type="submit" value="Update Product" />
+			</form>
+            <form action="/user" method="GET">
+                <input type="submit" value="Cancel" />
+            </form>
+<%- include('../partials/footer') %>
