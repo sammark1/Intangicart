@@ -159,6 +159,41 @@ const destroy = function (req,res){
         res.redirect("/user");
     })
 }
+const destroyUser = function (req,res){
+    db.User.findByIdAndDelete(req.params.id, function (err, deletedUser){
+        if (err) res.send(err);
+        db.User.find({name:"Intangicart"},function(err,Intangicart){
+            if (err) res.send(err);
+            deletedUser.userCollection.forEach(element => {
+                db.Product.findById(element,function(err,foundElement){
+                    foundElement.owner=Intangicart[0];
+                    foundElement.save();
+                })
+                Intangicart[0].userCollection.push(element);
+            });
+            Intangicart[0].save();
+        })
+        res.redirect("/landing");
+    })
+}
+
+const updateUSR = function (req,res){
+
+    db.User.findByIdAndUpdate(
+        req.user,
+        {
+            name:req.body.userName,
+            userIcon:req.body.userIcon,
+            userEmail:req.body.userEmail,
+
+        },
+        { new: true, returnOriginal: false },
+        (err, updatedUser) => {
+            if (err) res.send(err);
+            res.redirect("/user");
+        }
+    )
+}
 
 module.exports = {
     user,
@@ -169,4 +204,6 @@ module.exports = {
     edit,
     update,
     destroy,
+    destroyUser,
+    updateUSR,
 }

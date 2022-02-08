@@ -1,8 +1,15 @@
 <%- include('../partials/header') %>
 <div id="profileUSR"><!--This Div for user profile related things-->
+    <form action="/user/update" method="POST">
     <img src="<%=User[0].userIcon%>" alt="user profile">
+    <input class="profileUpdate" type=text name="userIcon" value="<%=User[0].userIcon%>">
     <h1><%=User[0].name%></h1>
+    <input class="profileUpdate" type=text name="userName" value="<%=User[0].name%>">
     <p><%=User[0].userEmail %> </p>
+    <input class="profileUpdate" type=text name="userEmail" value="<%=User[0].userEmail %>">
+    <button class="profileUpdate" id="profileUpdateButton">Update Profile</button>
+    </form>
+    <button id="profileEditButton">Edit Profile</button>
     <!-- <p>user since 04/07/1999</p> -->
 </div>
 <div id="collectionUSR"><!--This Div for user collection related things-->
@@ -27,7 +34,11 @@
     <!-- <p><%=//(Products[0].name);%> </p> -->
     <%=//console.log(User)%> 
     <%- include('./newPartial') %>
-    <p>/////////////////////////////////////////////</p>
+    <button id="deleteProfileButton">Delete Profile</button>
+    <form id="deleteProfileConfirm" method="POST" action="/user/deleteuser/<%=user2.id%>?_method=DELETE">
+        <input type="submit" value="Delete Profile">
+    </form>
+    <button id="deleteProfileCancel">Cancel</button>
 </div>
 <%- include('../partials/footer') %>
 <%=console.log(page)%>
