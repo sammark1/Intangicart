@@ -13,7 +13,7 @@ const shop = (req, res) => {
         const context = {
             user2: req.user,
             Products: products,
-          Onpage: "productPage",
+            Onpage: "productPage",
         }
         res.render("shop/shop",context);
     })
@@ -45,7 +45,7 @@ const confirm = function(req,res){
         .exec((err, foundProducts) => {
             if (err) res.send(err);
 
-            const context = {  Product: foundProducts, user2: req.user };
+            const context = {  Product: foundProducts, user2: req.user,Onpage: "userpage", };
 
             res.render("shop/confirm", context)
         });
