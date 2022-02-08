@@ -6,12 +6,15 @@
     <div id="shopGridSHP">
         <!-- for 6 random items in item collection retrieve name, image, and price as well as a link -->
         
-        <%for(i=0;i<12;i++){%>
-            
-            <%const product=Products[Math.floor(Math.random()*Products.length)];%> 
+        <%for(i=0;i<Math.min(Products.length,21);i++){%>
+            <%const product=Products[i]%>
+            <%//const product=Products[Math.floor(Math.random()*Products.length)];%> 
         <div class="shopCardSHP">
-           
-            <img src="/imgs/sitemedia/chup.png">
+            <%if(product.image){%>
+                <img src="<%=product.image%>">
+            <%}else{%>
+                <img src="/imgs/sitemedia/chup.png">
+            <%}%>
             <span>
             <h2><%=product.name%></h2>
             <!-- REVIEW SET BELOW TO PRICE -->
