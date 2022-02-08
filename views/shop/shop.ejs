@@ -4,11 +4,10 @@
 </div>
 <div id="shopSHP">
     <div id="shopGridSHP">
-        <!-- for 6 random items in item collection retrieve name, image, and price as well as a link -->
+        <!-- provides a maximum of 21 items to the shop from the item collection by retrieving name, image, and price as well as a link -->
         
         <%for(i=0;i<Math.min(Products.length,21);i++){%>
-            <%const product=Products[i]%>
-            <%//const product=Products[Math.floor(Math.random()*Products.length)];%> 
+            <%const product=Products[i]%> 
         <div class="shopCardSHP">
             <%if(product.image){%>
                 <img src="<%=product.image%>">
@@ -17,15 +16,12 @@
             <%}%>
             <span>
             <h2><%=product.name%></h2>
-            <!-- REVIEW SET BELOW TO PRICE -->
             <p><%=product.price%></p>
             <form action="/<%=product._id%>/confirm" method="GET">
     
                 <input id="purchaseButton" type="submit" value="Purchase" />
             </form>
 
-           <!-- <button id="TestButton"> Purchase </button> -->
-            
             </span>
         </div>
         
@@ -34,9 +30,6 @@
           
     </div>
 </div>
-
-
-   <!-- <button id="TestButton">TestButton</button> -->
 
    
 <%- include('../partials/footer') %>

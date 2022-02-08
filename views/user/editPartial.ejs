@@ -5,11 +5,6 @@ It allows the user to edit an item.-->
 		<div id="updateLayout">
 			<form action="/product/<%= Product._id%>?_method=PUT" method="POST">
 				<p>
-                    <% if(Product.listed){%>
-                        <input type="checkbox" name="listed" value="" checked="checked">
-                    <% }else{ %>
-                        <input type="checkbox" name="listed" >
-                    <% } %> 
                     <img src='<%=Product.image%>' alt="product image">
                     <input id="editFields"
 						type="text"

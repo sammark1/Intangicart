@@ -30,14 +30,8 @@
         </div>
         <h1 id="intangicart">Intangicart</h1>
           <% if (user2) { %>
-            <!-- <div id="searchbar">
-              <p class="material-icons">search</p>
-              <form>
-                <input type="text">
-              </form>
-            </div> -->
+           
             <div id =headerButtons>
-              <% console.log(user2)    %>
             <p id="userCurrency">$<%=user2.wallet%></p>
             <form action="/logout">
               <button class="authButton" type="submit">Log out</button>

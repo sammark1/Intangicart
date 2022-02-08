@@ -9,11 +9,9 @@ const userSchema = new mongoose.Schema ({
     tag: {type:String , default: "banana"},
     userCollection: [{type: mongoose.Schema.Types.ObjectId, ref:'Product'}],
     wallet: {type: Number, default: 10000, required: true}
-
 }, {
     timestamps: true,
 })
-
 
 const User = mongoose.model("User", userSchema)
 module.exports = User
