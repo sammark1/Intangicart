@@ -9,7 +9,7 @@ const Products = require("../models/products")
 //     res.render("shop/shop",{user2: req.user})
 // }
 const shop = (req, res) => {
-    Products.find({},function(err,products){
+    Products.find({owner:{$nin:req.user._id}},function(err,products){
         const context = {
             user2: req.user,
             Products: products,
