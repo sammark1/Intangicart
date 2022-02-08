@@ -21,10 +21,12 @@ const purchase = function (req,res){
     if(err) res.send(err);
         db.User.findById(purchaseProduct.owner, function(err, updateOldOwner){
         updateOldOwner.userCollection.splice(updateOldOwner.userCollection.indexOf(purchaseProduct),1);
+        updateOldOwner.wallet=updateOldOwner.wallet+purchaseProduct.price;
             db.User.findById(req.user).exec(function (err, updateNewOwner) {
             if (err) res.send(err);
              updateNewOwner.userCollection.push(purchaseProduct); 
             purchaseProduct.owner= updateNewOwner;
+            updateNewOwner.wallet=updateNewOwner.wallet-purchaseProduct.price;
         
         
         purchaseProduct.save(); 
@@ -34,6 +36,16 @@ const purchase = function (req,res){
         res.redirect("/user");  
     })   
 })
+}
+const confirm = function(req,res){  
+    db.Product.findById(req.params.id)
+        .exec((err, foundProducts) => {
+            if (err) res.send(err);
+
+            const context = {  Product: foundProducts, user2: req.user };
+
+            res.render("shop/confirm", context)
+        });
 }
 // const purchase = function(req, res) {
 //     db.Product.findByIdAndRemove(
@@ -73,5 +85,6 @@ const purchase = function (req,res){
 //
 module.exports = {
     shop,
-    purchase
+    purchase,
+    confirm
 }

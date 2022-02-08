@@ -9,7 +9,7 @@
     <div id="shopGridLND">
         <!-- for 6 random items in item collection retrieve name, image, and price as well as a link -->
         
-        <%for(i=0;i<1;i++){%>
+        <%for(i=0;i<6;i++){%>
             
             <%const product=Products[Math.floor(Math.random()*Products.length)];%> 
         <div class="shopCardLND">
@@ -19,12 +19,11 @@
             <h2><%=product.name%></h2>
             <!-- REVIEW SET BELOW TO PRICE -->
             <p><%=product.price%></p>
-            <form action="/<%= product._id%>?_method=PUT" method="POST">
+            <form action="/<%=product._id%>/confirm" method="GET">
     
                 <input type="submit" value="Purchase" />
             </form>
          <button id="popoverCancel">Cancel</button>
-           <!-- <div id="purchaseCard"><%-// include('./purchase') %></div> -->
            <!-- <button id="TestButton"> Purchase </button> -->
             
             </span>
