@@ -34,7 +34,9 @@
     <!-- <p><%=//(Products[0].name);%> </p> -->
     <%=//console.log(User)%> 
     <%- include('./newPartial') %>
-    <p>/////////////////////////////////////////////</p>
+    <form method="POST" action="/user/deleteuser/<%=user2.id%>?_method=DELETE">
+        <input type="submit" value="Delete Profile">
+    </form>
 </div>
 <%- include('../partials/footer') %>
 <%=console.log(page)%>

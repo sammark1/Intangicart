@@ -159,6 +159,12 @@ const destroy = function (req,res){
         res.redirect("/user");
     })
 }
+const destroyUser = function (req,res){
+    db.User.findByIdAndDelete(req.params.id, function (err, deletedProduct){
+        if (err) res.send(err);
+        res.redirect("/landing");
+    })
+}
 
 const updateUSR = function (req,res){
 
@@ -187,5 +193,6 @@ module.exports = {
     edit,
     update,
     destroy,
+    destroyUser,
     updateUSR,
 }
