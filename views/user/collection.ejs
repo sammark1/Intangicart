@@ -22,7 +22,7 @@
             <%if(product.listed){%> 
                 <p>listed</p>
             <% } %>  
-            <form method="GET" action="/<%=product._id%>/edit">
+            <form method="GET" action="/product/<%=product._id%>/edit">
                 <button>Edit</button>
             </form>
             <form method="POST" action="/user/delete/<%=product._id%>?_method=DELETE">
@@ -41,4 +41,4 @@
     <button id="deleteProfileCancel">Cancel</button>
 </div>
 <%- include('../partials/footer') %>
-<%=console.log(page)%>
+<%=//console.log(page)%>
