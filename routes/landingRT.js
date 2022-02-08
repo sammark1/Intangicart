@@ -2,9 +2,7 @@ const router = require('express').Router();
 const ctrl = require('../controllers');
 const passport = require("passport");
 
-// router.get("/", function(req, res){
-//     res.redirect("/landing");
-// });
+
 router.get("/", function(req,res){
   res.redirect("/landing");
 });
