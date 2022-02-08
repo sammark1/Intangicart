@@ -8,7 +8,7 @@ const userSchema = new mongoose.Schema ({
     userEmail: String,
     tag: {type:String , default: "banana"},
     userCollection: [{type: mongoose.Schema.Types.ObjectId, ref:'Product'}],
-    wallet: {type: Number, default: '10000', required: true}
+    wallet: {type: Number, default: 10000, required: true}
 
 }, {
     timestamps: true,
