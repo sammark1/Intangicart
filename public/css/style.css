@@ -190,6 +190,7 @@ SECTION LANDING SELECTORS
 SECTION SHOP SELECTORS
 //////////////////////////////////////////////////////
 */
+
 #shopGridSHP{
     display: grid;
     grid-template-columns: repeat(3, 1fr);;
@@ -274,6 +275,45 @@ SECTION SHOP SELECTORS
 SECTION USER/COLLECTION SELECTORS
 //////////////////////////////////////////////////////
 */
+#profileUSR{
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    padding:2rem;
+}
+    
+#profileDetailsUSR{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#profileDetailsUSR > *{
+    margin:1rem;
+}
+
+#profileImageUSR{
+    width:96px;
+    height:96px;
+    border-radius: 50%;
+}
+#profileDetailsUSR > button{
+    margin-top:0;
+    margin-left: auto;
+    margin-bottom: auto;
+}
+
+.profileUpdate {
+    color:inherit;
+    font-family: inherit;
+    background-color: inherit;
+    border: var(--gray) 1px solid;
+    padding:0.25rem;
+}
+#profileUpdateButton:hover {
+    background-color: var(--primary-color-lighter);
+    color:var(--secondary-color);
+}
+
 #collectionUSR {
     display: grid;
     grid-template-columns: repeat(3, 1fr);;
@@ -296,15 +336,7 @@ SECTION USER/COLLECTION SELECTORS
 #productUSR > img{
     max-height: 4rem;
 }
-.profileUpdate {
-    border-radius: 2rem;
-    color:var(--primary-color-lighter)
-}
-#profileUpdateButton {
-    border-radius: 2rem;
-    color:var(--primary-color-lighter);
-    background-color:var(--login-color);
-}
+
 #editProductButton {
     border-radius: 15%;
     color:var(--gray);
@@ -343,11 +375,11 @@ SECTION USER/COLLECTION SELECTORS
     border-radius: 2rem;
     color:var(--primary-color-lighter)
 }
-#createNewItemButton {
+/* #createNewItemButton {
     border-radius: 15%;
     color:var(--login-color);
     background-color:var(--primary-color-lighter);
-}
+} */
 #updateLayout {
     display: grid;
     grid-template-columns:(3, 1fr);;
@@ -379,3 +411,34 @@ SECTION USER/COLLECTION SELECTORS
 SECTION GENERAL SELECTORS
 //////////////////////////////////////////////////////
 */
+body{
+    color: var(--primary-color);
+}
+.editButton{
+    border:0px;
+    font-family: 'Josefin Sans', sans-serif;
+    color: inherit;
+    background-color: inherit;
+    padding: 0.5rem;
+}
+.inputField{
+    color:inherit;
+    font-family: inherit;
+    background-color: inherit;
+    border: var(--gray) 1px solid;
+    padding:0.25rem;
+}
+.submitButton{
+    font-family: inherit;
+    color: var(--primary-color);
+    background-color: inherit;
+    border:0px;
+    padding:0.25rem;
+}
+.submitButton:hover{
+    font-family: inherit;
+    color: var(--secondary-color);
+    background-color: var(--primary-color-lighter);
+    border:0px;
+    padding:0.25rem;
+}
