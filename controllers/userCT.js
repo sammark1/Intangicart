@@ -111,7 +111,7 @@ const idx = (req, res) => {
 };
 
 const edit = function(req, res){
-    console.log(req.params.id)
+    //console.log(req.params.id)
     db.Product.findById(req.params.id, (err, foundProducts) => {
        
         if (err) res.send(err);
@@ -119,17 +119,15 @@ const edit = function(req, res){
 
         const context = { Product: foundProducts, user2: req.user, Onpage: "userpage" }
 
-
-
         res.render("user/editPartial", context)
     });
 };
 const update = function(req, res) {
-    console.log("////////////////////////////////////body:",req.body)
+    //console.log("////////////////////////////////////body:",req.body)
     db.Product.findByIdAndUpdate(
         req.params.id,
         { 
-            listed: Boolean(req.body.listed),
+            //isted: Boolean(req.body.listed),
             name: req.body.name,
             price:req.body.price,
             image:req.body.image,
@@ -173,7 +171,7 @@ const destroyUser = function (req,res){
             });
             Intangicart[0].save();
         })
-        res.redirect("/landing");
+        res.redirect("/logout");
     })
 }
 
